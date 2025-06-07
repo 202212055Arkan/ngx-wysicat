@@ -10,8 +10,9 @@
   </p>
   <p>
     <a href="https://app.netlify.com/sites/test-quill-appx/deploys"><img src="https://api.netlify.com/api/v1/badges/ce859423-fb65-4ae9-82c4-d0ad1e24982e/deploy-status" alt="Demo Status"></a>
-    <a href="https://test-quill-appx.netlify.app/"><img src="https://img.shields.io/badge/Demo-Test%20Quill%20Appx-blue" alt="Demo"></a>
-    <a href="https://ngx-wysicat.netlify.app/"><img src="https://img.shields.io/badge/Landing-ngx--wysicat-success" alt="Landing Page"></a>
+    <a href="https://ngx-wysicat-demo.netlify.app/"><img src="https://img.shields.io/badge/demo-ngx--wysicat-blue" alt="ngx-wysicat demo"></a>
+
+[//]: # (    <a href=""><img src="https://img.shields.io/badge/landing%20page-ngx--wysicat-purple" alt="ngx-wysicat demo landing page"></a>)
   </p>
 </div>
 
