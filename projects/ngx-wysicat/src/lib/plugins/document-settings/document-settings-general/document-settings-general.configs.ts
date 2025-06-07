@@ -62,5 +62,5 @@ export const DOCUMENT_FEATURES: DocumentSettingsFeature[] = [
 export const RANGE_CONTROLS: RangeControl[] = [
   { key: 'fontSize', label: 'Font Size', value: 1, min: 0.8, max: 1.3, step: 0.1, unit: 'x' },
   { key: 'maxWidthPercent', label: 'Document Width', value: 1, min: 0.7, max: 1, step: 0.02, unit: 'x' },
-  { key: 'lineSpacingMultiplier', label: 'Line Spacing', value: 3.5, min: 3, max: 7, step: 0.1, unit: 'x' },
+  { key: 'lineSpacingMultiplier', label: 'Line Spacing', value: 6, min: 4, max: 10, step: 0.1, unit: 'x' },
 ];

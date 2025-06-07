@@ -60,10 +60,18 @@
   --editor-blockquote-font-size: calc(var(--editor-font-size) * var(--editor-font-size-multiplier));
   --editor-h1-font-size: calc(calc(var(--editor-font-size) * 1.8) * var(--editor-font-size-multiplier));
   --editor-h2-font-size: calc(calc(var(--editor-font-size) * 1.4) * var(--editor-font-size-multiplier));
-  --editor-h3-font-size: calc(calc(var(--editor-font-size) * 1.2) * var(--editor-font-size-multiplier));
-  --editor-h4-font-size: calc(calc(var(--editor-font-size) * 1.1) * var(--editor-font-size-multiplier));
+  --editor-h3-font-size: calc(calc(var(--editor-font-size) * 1.3) * var(--editor-font-size-multiplier));
+  --editor-h4-font-size: calc(calc(var(--editor-font-size) * 1.2) * var(--editor-font-size-multiplier));
   --editor-codeblock-font-size: calc(var(--editor-font-size) * var(--editor-font-size-multiplier));
 
+  /**
+   * ======================== Line Heights ========================
+   */
+  --editor-paragraph-line-height: 1.4;
+  --editor-h1-line-height: 1.2;
+  --editor-h2-line-height: 1.2;
+  --editor-h3-line-height: 1.2;
+  --editor-h4-line-height: 1.2;
 
   /**
    * ======================== Paddings ========================

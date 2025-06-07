@@ -16,9 +16,9 @@
   li.ql-block-list {
     font-size: var(--editor-list-font-size);
     position: relative;
-    padding: var(--editor-block-padding) 0 var(--editor-block-padding) 2rem;
+    padding: calc(var(--editor-block-padding) * 0.1) 0 calc(var(--editor-block-padding) * 0.1) 2rem;
     color: var(--nw-color-primary-900);
-    line-height: 1.2;
+    line-height: calc(var(--editor-paragraph-line-height) * (1 + (var(--nw-editor-line-spacing-multiplier) - 6) / 12));
   }
 
   h1, h2, h3, h4, h5, h6, .ql-block, .ql-block-list, blockquote {
@@ -39,7 +39,7 @@
   }
 
   .ql-block {
-    line-height: var(--editor-paragraph-line-height, 1.42);
+    line-height: calc(var(--editor-paragraph-line-height) * (1 + (var(--nw-editor-line-spacing-multiplier) - 6) / 6));
     color: var(--nw-color-primary-900);
     font-weight: 400;
     padding: var(--editor-block-padding) 0;
@@ -47,7 +47,14 @@
 
   h1, h2, h3, h4 {
     font-weight: 700;
-    padding: var(--editor-block-padding) 0;
+    padding: calc(var(--editor-block-padding) * 1.5) 0 var(--editor-block-padding) 0;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+    font-size: var(--editor-paragraph-font-size);
+    line-height: calc(var(--editor-paragraph-line-height) * (1 + (var(--nw-editor-line-spacing-multiplier) - 6) / 6));
   }
 }
 
@@ -55,22 +62,22 @@
   h1 {
     font-size: var(--editor-h1-font-size);
     letter-spacing: -0.02em;
-    line-height: var(--editor-h1-line-height, 30px);
+    line-height: calc(var(--editor-h1-line-height) * (1 + (var(--nw-editor-line-spacing-multiplier) - 6) / 12));
   }
 
   h2 {
     font-size: var(--editor-h2-font-size);
     letter-spacing: -0.015em;
-    line-height: var(--editor-h2-line-height, 28px);
+    line-height: calc(var(--editor-h2-line-height) * (1 + (var(--nw-editor-line-spacing-multiplier) - 6) / 12));
   }
 
   h3 {
     font-size: var(--editor-h3-font-size);
-    line-height: var(--editor-h3-line-height, 25px);
+    line-height: calc(var(--editor-h3-line-height) * (1 + (var(--nw-editor-line-spacing-multiplier) - 6) / 12));
   }
 
   h4 {
-    line-height: var(--editor-h4-line-height, 22px);
+    line-height: calc(var(--editor-h4-line-height) * (1 + (var(--nw-editor-line-spacing-multiplier) - 6) / 12));
     font-size: var(--editor-h4-font-size);
   }
 
@@ -95,14 +102,12 @@
 
   li {
     margin-bottom: 0;
-    padding: calc(var(--editor-block-padding) * 0.2 * var(--nw-editor-line-spacing-multiplier)) 0 calc(var(--editor-block-padding) * 0.2 * var(--nw-editor-line-spacing-multiplier)) 2rem;
+    padding: calc(var(--editor-block-padding) * 0.1 * var(--nw-editor-line-spacing-multiplier)) 0 calc(var(--editor-block-padding) * 0.1 * var(--nw-editor-line-spacing-multiplier)) 2rem;
   }
 
   li.ql-block-list {
-    //padding-top: 0 + calc(1px * var(--editor-block-padding-multiplier));
-    //padding-bottom: 0 + calc(10px * var(--editor-block-padding-multiplier));
     color: var(--nw-color-primary-900);
-    line-height: 1.2;
+    line-height: calc(var(--editor-paragraph-line-height) * (1 + (var(--nw-editor-line-spacing-multiplier) - 6) / 12));
   }
 
   ul {
@@ -156,7 +161,6 @@
     }
   }
 }
-
 
 .ql-editor li > .ql-ui:before {
   margin-left: -1.8em;
