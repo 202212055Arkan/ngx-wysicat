@@ -16,12 +16,12 @@ import {
   HeaderComponent,
   HeaderDetailsComponent,
   ReadOnlyButtonComponent,
-  RichDocumentComponent,
-  RichDocumentService,
+  WysicatRootComponent,
+  WysicatRootService,
   SettingsButtonComponent,
   TabComponent,
   TabGroupComponent,
-} from 'ngx-rich-document-editor';
+} from 'ngx-wysicat';
 
 import { MOCK_DATA } from './mock-data';
 import { NgOptimizedImage } from '@angular/common';
@@ -34,7 +34,7 @@ import { NgOptimizedImage } from '@angular/common';
     HeaderComponent,
     TabGroupComponent,
     BlockMenuComponent,
-    RichDocumentComponent,
+    WysicatRootComponent,
     HeaderAuthorComponent,
     HeaderDetailsComponent,
     ReadOnlyButtonComponent,
@@ -82,7 +82,7 @@ export class AppComponent {
       formatter: (count: number) => `${Math.max(1, Math.round(count / 225))} min read time`,
     },
   };
-  private readonly richDocumentService = inject(RichDocumentService);
+  private readonly richDocumentService = inject(WysicatRootService);
   isReadOnly = this.richDocumentService.isReadOnly;
 
   constructor() {

@@ -1,38 +1,19 @@
-import {ChangeDetectionStrategy, Component, signal} from "@angular/core";
-import {
-  DocumentSettingsMenuComponent,
-  EditorDataModel,
-  HeaderAuthorComponent,
-  HeaderAuthorModel,
-  HeaderComponent,
-  HeaderDetailsComponent,
-  RichDocumentComponent,
-} from "ngx-rich-document-editor";
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { EditorDataModel, HeaderAuthorModel } from 'ngx-wysicat';
 
-import {DemoSectionComponent} from './demo-section/demo-section.component';
-import {FeaturesSectionComponent} from './features-section/features-section.component';
-import {FooterSectionComponent} from './footer-section/footer-section.component';
-import {HeroSectionComponent} from './hero-section/hero-section.component';
+import { DemoSectionComponent } from './demo-section/demo-section.component';
+import { FeaturesSectionComponent } from './features-section/features-section.component';
+import { FooterSectionComponent } from './footer-section/footer-section.component';
+import { HeroSectionComponent } from './hero-section/hero-section.component';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-root',
-  imports: [
-    DocumentSettingsMenuComponent,
-    HeaderDetailsComponent,
-    RichDocumentComponent,
-    HeaderComponent,
-    HeaderAuthorComponent,
-    HeroSectionComponent,
-    FeaturesSectionComponent,
-    DemoSectionComponent,
-    FooterSectionComponent,
-  ],
+  imports: [HeroSectionComponent, FeaturesSectionComponent, DemoSectionComponent, FooterSectionComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css' ],
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-
   data: EditorDataModel[] = [];
 
   authorData: HeaderAuthorModel = {

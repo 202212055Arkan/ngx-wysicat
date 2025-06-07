@@ -1,0 +1,44 @@
+// todo probably make it custom, because it's commonly used, and it's not under nw-rich-document
+.cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.32);
+  //background: none;
+  //pointer-events: none !important; //todo
+}
+
+// Global styles for Angular CDK overlays
+
+// Transparent backdrop for emoji picker
+.transparent-backdrop {
+  background-color: transparent !important;
+}
+
+// Override z-index for overlays to ensure they appear above other content
+.cdk-overlay-container {
+  z-index: 1050 !important;
+}
+
+// Ensure overlay panes are visible
+.cdk-overlay-pane {
+  visibility: visible !important;
+  display: block !important;
+  opacity: 1 !important;
+}
+
+// Specific styles for visible-overlay class
+.visible-overlay {
+  visibility: visible !important;
+  display: block !important;
+  opacity: 1 !important;
+  z-index: 1050 !important;
+}
+
+// Fix emoji overlay position
+.emoji-overlay-pane {
+  position: absolute !important;
+  pointer-events: auto !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  max-width: 350px !important;
+  max-height: 400px !important;
+}

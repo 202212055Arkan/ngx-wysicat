@@ -11,7 +11,7 @@
   <p>
     <a href="https://app.netlify.com/sites/test-quill-appx/deploys"><img src="https://api.netlify.com/api/v1/badges/ce859423-fb65-4ae9-82c4-d0ad1e24982e/deploy-status" alt="Demo Status"></a>
     <a href="https://test-quill-appx.netlify.app/"><img src="https://img.shields.io/badge/Demo-Test%20Quill%20Appx-blue" alt="Demo"></a>
-    <a href="https://ngx-rich-document-editor.netlify.app/"><img src="https://img.shields.io/badge/Landing-NGX%20Rich%20Document%20Editor-success" alt="Landing Page"></a>
+    <a href="https://ngx-wysicat.netlify.app/"><img src="https://img.shields.io/badge/Landing-NGX%20Rich%20Document%20Editor-success" alt="Landing Page"></a>
   </p>
 </div>
 
@@ -41,13 +41,13 @@ NGX Rich Document Editor comes with a robust plugin architecture that includes:
 ## 🐱 Installation
 
 ```bash
-pnpm add ngx-rich-document-editor
+pnpm add ngx-wysicat
 ```
 
 ## 🐈 Basic Usage
 
 ```typescript
-import { provideNgxRichDocumentEditorConfig } from 'ngx-rich-document-editor';
+import { provideNgxRichDocumentEditorConfig } from 'ngx-wysicat';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -99,7 +99,7 @@ export const appConfig: ApplicationConfig = {
 ## 🐈‍⬛ Component API
 
 ### Core Components
-- `RichDocumentComponent` - The main container that brings everything together
+- `WysicatRootComponent` - The main container that brings everything together
 - `HeaderComponent` - Sleek document header with customizable sections
 - `BlockMenuComponent` - Intuitive interface for block manipulation
 

@@ -1,0 +1,10 @@
+<button #blockOptionsMenu
+        nwTooltip="Drag to move"
+        tooltipLine2="Click to open menu"
+        class="nw-button nw-button__with-icon"
+        [boldFirstWord]="true"
+        [rdeDraggable]="configs.getFeatureFlag('blockDragAndDrop')"
+        (click)="openMenu(blockOptionsMenu)">
+  <nw-svg-icon [name]="configs.getFeatureFlag('blockDragAndDrop') ? 'drag-and-drop-vertical' : 'gear'"
+                [secondary]="true"/>
+</button>

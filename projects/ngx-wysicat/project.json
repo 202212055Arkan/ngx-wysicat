@@ -1,0 +1,45 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "ngx-wysicat",
+  "projectType": "library",
+  "sourceRoot": "projects/ngx-wysicat/src",
+  "prefix": "lib",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:ng-packagr",
+      "options": {
+        "project": "projects/ngx-wysicat/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "projects/ngx-wysicat/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "projects/ngx-wysicat/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production",
+      "outputs": [
+        "{workspaceRoot}/dist/ngx-wysicat"
+      ]
+    },
+    "analyze": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npx source-map-explorer dist/ngx-wysicat/fesm2022/ngx-wysicat.mjs"
+        ],
+        "cwd": "."
+      },
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

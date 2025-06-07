@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideNgxRichDocument } from 'ngx-rich-document-editor';
+import { provideNgxRichDocument } from 'ngx-wysicat';
 
 export const appConfig: ApplicationConfig = {
   providers: [

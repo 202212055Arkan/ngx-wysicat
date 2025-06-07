@@ -1,0 +1,17 @@
+nw-root {
+  .vertical-divider {
+    width: 1px;
+    height: 12px;
+    background: #cecece;
+    margin: auto 3px;
+
+    &--big {
+      margin: auto 17px;
+    }
+  }
+
+  .horizontal-divider {
+    height: 1px;
+    background-color: var(--nw-color-primary-200);
+  }
+}

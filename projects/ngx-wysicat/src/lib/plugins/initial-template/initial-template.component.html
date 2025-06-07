@@ -1,0 +1,26 @@
+<div class="nw-initial-template">
+
+  <div class="nw-initial-template__options">
+    @for(x of template; track $index) {
+      <div
+        class="nw-initial-template__option"
+        tabindex="0"
+        [class.nw-initial-template__option--selected]="hoveredItem === x.title"
+        (click)="selectTemplate(x)"
+        (keyup.enter)="selectTemplate(x)"
+        (mouseenter)="hoveredItem = x.title"
+        (mouseleave)="hoveredItem = null">
+
+        <div class="nw-initial-template__option__icon">
+          <nw-svg-icon
+            [name]="x.icon"
+            [size]="18"
+            [color]="'var(--nw-color-primary-400)'"
+          />
+        </div>
+
+        <span class="nw-initial-template__option__title">{{ x.title }}</span>
+      </div>
+    }
+  </div>
+</div>
