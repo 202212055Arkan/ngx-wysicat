@@ -1,0 +1,27 @@
+:host {
+  width: 310px;
+  display: block;
+
+  .nw-tab-list {
+    display: flex;
+    gap: 19px;
+    margin-bottom: 18px;
+
+    &__element {
+      font-family: var(--nw-font-family);
+      font-size: 13px;
+      font-weight: 500;
+      background: none;
+      cursor: pointer;
+      color: var(--nw-color-primary-400);
+
+      &--active {
+        color: var(--nw-color-primary-800);
+      }
+    }
+  }
+
+  .nw-tab-content {
+    padding: 16px 0;
+  }
+}

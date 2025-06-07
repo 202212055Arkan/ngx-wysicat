@@ -1,27 +1,15 @@
-import { Component, signal } from '@angular/core';
-import {
-  DocumentSettingsMenuComponent, EditorDataModel,
-  HeaderAuthorComponent, HeaderAuthorModel,
-  HeaderComponent,
-  HeaderDetailsComponent,
-  RichDocumentComponent,
-} from 'ngx-rich-document-editor';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { EditorDataModel, HeaderAuthorModel } from 'ngx-wysicat';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-demo-section',
   standalone: true,
-  imports: [
-    RichDocumentComponent,
-    HeaderAuthorComponent,
-    HeaderComponent,
-    HeaderDetailsComponent,
-    DocumentSettingsMenuComponent,
-  ],
+  imports: [],
   templateUrl: './demo-section.component.html',
   styleUrls: ['./demo-section.component.css'],
 })
 export class DemoSectionComponent {
-
   data: EditorDataModel[] = [];
 
   authorData: HeaderAuthorModel = {

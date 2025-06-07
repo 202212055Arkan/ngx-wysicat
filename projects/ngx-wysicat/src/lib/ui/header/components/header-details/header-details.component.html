@@ -1,0 +1,10 @@
+<div class="header-detail">
+  <ng-content />
+</div>
+@for (detail of details(); track $index) {
+  <div class="header-detail">
+    <nw-svg-icon [name]="detail.label" [primary]="true"/>
+    {{ detail.value }}
+  </div>
+}
+

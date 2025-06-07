@@ -1,0 +1,10 @@
+//todo nw
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--nw-color-primary-200) transparent;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+}

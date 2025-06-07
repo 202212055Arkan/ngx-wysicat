@@ -1,0 +1,42 @@
+<div class="menu-content" tabindex="0" role="menu" (click)="xd($event)" (keyup)="xd($event)">
+  <div class="m0header">Choose {{ label() }} color</div>
+
+  @for (shadeValue of ['300', '400', '500']; track $index) {
+    <div class="color-palette__grid">
+      @for (color of colorEntries; track $index) {
+        @for (shade of color.value | keyvalue; track $index) {
+          @if (shade.key === shadeValue) {
+            <button class="color-palette__grid__item"
+                    [style.border-color]="shade.value"
+                    [style.background]="shade.value"
+                    (click)="selectColor(shade.value);">
+            </button>
+          }
+        }
+      }
+    </div>
+  }
+
+  <div class="color-palette__grid color-palette__grid__bottom">
+    <button class="color-palette__grid__item"
+            [class.color-palette__grid__item__border-on-white]="true"
+            [style.background]="colors['white']['000']"
+            (click)="selectColor(colors['white']['000'])">
+    </button>
+    <button class="color-palette__grid__item"
+            [class.color-palette__grid__item__border-on-white]="colors['black']['000']"
+            [style.background]="colors['black']['000']"
+            [style.border-color]="colors['black']['000']"
+            (click)="selectColor(colors['black']['000'])">
+    </button>
+  </div>
+
+
+  <div class="button-group">
+    <button class="nw-button nw-button__primary" (click)="handleCancel()">Cancel</button>
+    <button class="nw-button nw-button__primary" (click)="selectColor(null)">
+      <nw-svg-icon name="clear" [primary]="true"/>
+      Clear {{ label() }} color
+    </button>
+  </div>
+</div>

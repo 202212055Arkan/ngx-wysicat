@@ -15,7 +15,7 @@
       "dependsOn": [
         {
           "target": "build",
-          "projects": "ngx-rich-document-editor"
+          "projects": "ngx-wysicat"
         }
       ],
       "options": {
@@ -35,14 +35,14 @@
           },
           {
             "glob": "**/*.svg",
-            "input": "./node_modules/ngx-rich-document-editor/assets/icons",
+            "input": "./node_modules/ngx-wysicat/assets/icons",
             "output": "projects/demo/assets/img/icons"
           }
         ],
         "styles": [
           "node_modules/quill/dist/quill.bubble.css",
           "projects/demo/src/assets/styles/main.scss",
-          "dist/ngx-rich-document-editor/assets/styles/main.scss"
+          "dist/ngx-wysicat/assets/styles/main.scss"
         ],
         "scripts": [
           "node_modules/quill/dist/quill.js"
@@ -77,7 +77,7 @@
       "dependsOn": [
         {
           "target": "build",
-          "projects": "ngx-rich-document-editor"
+          "projects": "ngx-wysicat"
         }
       ],
       "configurations": {

@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="assets/logo.png" alt="NGX Rich Document Editor" width="250">
-  <h1>NGX Rich Document Editor</h1>
+  <img src="assets/logo.png" alt="ngx-wysicat" width="250">
+  <h1>ngx-wysicat</h1>
   <p><b>A flexible, feature-rich document editor for Angular.</b></p>
   <p>
-    Build beautiful, structured documents with ease. NGX Rich Document Editor combines block-based editing, advanced formatting, and a flexible plugin system—all powered by Quill.js. Perfect for collaborative apps, note-taking tools, or any project where content quality matters.
+    Build beautiful, structured documents with ease. ngx-wysicat combines block-based editing, advanced formatting, and a flexible plugin system—all powered by Quill.js. Perfect for collaborative apps, note-taking tools, or any project where content quality matters.
   </p>
   <p>
     Designed for clarity, speed, and a seamless writing experience. Make your documents stand out and your users feel at home.
@@ -11,9 +11,11 @@
   <p>
     <a href="https://app.netlify.com/sites/test-quill-appx/deploys"><img src="https://api.netlify.com/api/v1/badges/ce859423-fb65-4ae9-82c4-d0ad1e24982e/deploy-status" alt="Demo Status"></a>
     <a href="https://test-quill-appx.netlify.app/"><img src="https://img.shields.io/badge/Demo-Test%20Quill%20Appx-blue" alt="Demo"></a>
-    <a href="https://ngx-rich-document-editor.netlify.app/"><img src="https://img.shields.io/badge/Landing-NGX%20Rich%20Document%20Editor-success" alt="Landing Page"></a>
+    <a href="https://ngx-wysicat.netlify.app/"><img src="https://img.shields.io/badge/Landing-ngx--wysicat-success" alt="Landing Page"></a>
   </p>
 </div>
+
+> **!! Contributions are welcome!** If you find an issue or have an idea for improvement, please feel free to create a pull request or open an issue. We appreciate your help in making this project better!
 
 ## 🐾 Features
 
@@ -26,7 +28,7 @@
 
 ### Plugin System
 
-NGX Rich Document Editor comes with a robust plugin architecture that includes:
+ngx-wysicat comes with a robust plugin architecture that includes:
 
 - **Text Toolbar** - Comprehensive text formatting with color selection, headings, lists, links, and more
 - **Block Creation** - Add various content blocks to your document
@@ -41,17 +43,17 @@ NGX Rich Document Editor comes with a robust plugin architecture that includes:
 ## 🐱 Installation
 
 ```bash
-pnpm add ngx-rich-document-editor
+pnpm add ngx-wysicat
 ```
 
 ## 🐈 Basic Usage
 
 ```typescript
-import { provideNgxRichDocumentEditorConfig } from 'ngx-rich-document-editor';
+import { provideNgxWysicatConfig } from 'ngx-wysicat';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideNgxRichDocumentEditorConfig({
+    provideNgxWysicatConfig({
       features: {
         emojis: true,
         blockDragAndDrop: true,
@@ -99,7 +101,7 @@ export const appConfig: ApplicationConfig = {
 ## 🐈‍⬛ Component API
 
 ### Core Components
-- `RichDocumentComponent` - The main container that brings everything together
+- `WysicatRootComponent` - The main container that brings everything together
 - `HeaderComponent` - Sleek document header with customizable sections
 - `BlockMenuComponent` - Intuitive interface for block manipulation
 
@@ -107,7 +109,7 @@ export const appConfig: ApplicationConfig = {
 
 ```typescript
 @Injectable({ providedIn: 'root' })
-export class MyCustomPlugin implements RichDocumentEditorPlugin {
+export class MyCustomPlugin implements WysicatPlugin {
   id = 'my-plugin';
   name = 'My Plugin';
   

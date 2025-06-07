@@ -1,12 +1,13 @@
-import {ApplicationConfig, provideZoneChangeDetection} from "@angular/core";
-import {provideNgxRichDocument} from "ngx-rich-document-editor";
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { provideNgxRichDocument } from 'ngx-wysicat';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({
       eventCoalescing: true,
     }),
-    provideNgxRichDocument({
+    provideNgxRichDocument(
+      {
         features: {
           initialTemplate: false,
           emojis: false,

@@ -1,0 +1,99 @@
+// TODO it's used in apps as well which is wrong, i think only font is affected
+
+:root {
+  /**
+   * ======================== Colors ========================
+   */
+  --nw-color-primary-50: var(--nw-color-slate-50);
+  --nw-color-primary-100: var(--nw-color-slate-100);
+  --nw-color-primary-200: var(--nw-color-slate-200);
+  --nw-color-primary-300: var(--nw-color-slate-300);
+  --nw-color-primary-400: var(--nw-color-slate-400);
+  --nw-color-primary-500: var(--nw-color-slate-500);
+  --nw-color-primary-600: var(--nw-color-slate-600);
+  --nw-color-primary-700: var(--nw-color-slate-700);
+  --nw-color-primary-800: var(--nw-color-slate-800);
+  --nw-color-primary-900: var(--nw-color-slate-900);
+  --nw-color-primary-950: var(--nw-color-slate-950);
+
+  --nw-color-slate-50: oklch(0.984 0.003 247.858);
+  --nw-color-slate-100: oklch(0.968 0.007 247.896);
+  --nw-color-slate-200: oklch(0.929 0.013 255.508);
+  --nw-color-slate-300: oklch(0.869 0.022 252.894);
+  --nw-color-slate-400: oklch(0.704 0.04 256.788);
+  --nw-color-slate-500: oklch(0.554 0.046 257.417);
+  --nw-color-slate-600: oklch(0.446 0.043 257.281);
+  --nw-color-slate-700: oklch(0.372 0.044 257.287);
+  --nw-color-slate-800: oklch(0.279 0.041 260.031);
+  --nw-color-slate-900: oklch(0.208 0.042 265.755);
+  --nw-color-slate-950: oklch(0.129 0.042 264.695);
+
+  --nw-color-green-500: oklch(0.723 0.219 149.579);
+  --nw-color-red-500: oklch(0.637 0.237 25.331);
+  --nw-color-orange-400: oklch(0.75 0.183 55.934);
+  --nw-color-white: #fff;
+  --color-yellow-300: oklch(0.905 0.182 98.111);
+  --color-yellow-400: oklch(0.852 0.199 91.936);
+
+
+  /**
+   * ======================== Editor ========================
+   */
+  --nw-editor-max-width-percent: 1;
+  --nw-editor-max-width: calc(100% * var(--nw-editor-max-width-percent));
+
+
+  /**
+   * ======================== Fonts ========================
+   */
+  //--editor-font-family: 'Times New Roman';
+  --nw-font-family: system-ui, sans-serif;
+
+  /**
+   * ======================== Font sizes ========================
+   */
+  //--editor-font-size: 15px;
+  --editor-font-size: 18px;
+  --editor-font-size-multiplier: 1;
+  --editor-paragraph-font-size: calc(var(--editor-font-size) * var(--editor-font-size-multiplier));
+  --editor-list-font-size: calc(var(--editor-font-size) * var(--editor-font-size-multiplier));
+  --editor-blockquote-font-size: calc(var(--editor-font-size) * var(--editor-font-size-multiplier));
+  --editor-h1-font-size: calc(calc(var(--editor-font-size) * 1.8) * var(--editor-font-size-multiplier));
+  --editor-h2-font-size: calc(calc(var(--editor-font-size) * 1.4) * var(--editor-font-size-multiplier));
+  --editor-h3-font-size: calc(calc(var(--editor-font-size) * 1.2) * var(--editor-font-size-multiplier));
+  --editor-h4-font-size: calc(calc(var(--editor-font-size) * 1.1) * var(--editor-font-size-multiplier));
+  --editor-codeblock-font-size: calc(var(--editor-font-size) * var(--editor-font-size-multiplier));
+
+
+  /**
+   * ======================== Paddings ========================
+   */
+  --editor-padding-multiplier: 1;
+  --editor-padding: 50px calc(67px * var(--editor-padding-multiplier)) 0 calc((67px * var(--editor-padding-multiplier)));
+  --nw-editor-line-spacing-multiplier: 1;
+  --editor-block-padding: calc(1px * var(--nw-editor-line-spacing-multiplier));
+
+
+  /**
+   * ======================== Borders ========================
+   */
+  --border: 1px solid var(--nw-color-primary-300); //200
+  --border-300: 1px solid var(--nw-color-primary-300);
+  --border-400: 1px solid var(--nw-color-primary-400);
+  --border-500: 1px solid var(--nw-color-primary-500);
+
+
+  /**
+   * ======================== Shadows ========================
+   */
+  --shadow-2xs: 0 1px rgb(0 0 0 / 0.05);
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+
+  /**
+   * ======================== Card ========================
+   */
+  --card-border: var(--border-300);
+}

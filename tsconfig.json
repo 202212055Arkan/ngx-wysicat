@@ -8,8 +8,8 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "ngx-rich-document-editor": [
-        "./projects/ngx-rich-document-editor/src/lib"
+      "ngx-wysicat": [
+        "./projects/ngx-wysicat/src/lib"
       ]
     },
     "skipLibCheck": true,

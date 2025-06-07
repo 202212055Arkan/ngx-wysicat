@@ -1,0 +1,49 @@
+//todo change nw
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 12px;
+  border: var(--border-300);
+  border-radius: 8px;
+  background: var(--nw-color-white);
+  box-shadow: var(--shadow-2xs);
+
+  &:focus-within {
+    outline: 2px solid var(--nw-color-primary-300);
+    outline-offset: -2px;
+  }
+
+  input {
+    font-weight: 400;
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    background: transparent;
+    color: var(--nw-color-primary-900);
+
+    &::placeholder {
+      font-weight: 400;
+      color: var(--nw-color-primary-500);
+      opacity: 0.7;
+      transition: opacity 0.15s ease;
+    }
+
+    &:focus::placeholder {
+      opacity: 0.5;
+    }
+  }
+
+  i {
+    font-size: 16px;
+    color: var(--nw-color-primary-500);
+    transition: all 0.2s ease;
+  }
+
+  &:hover i {
+    color: var(--nw-color-primary-600);
+  }
+}

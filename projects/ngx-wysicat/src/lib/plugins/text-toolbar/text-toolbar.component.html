@@ -1,0 +1,130 @@
+<button #typographyMenu
+        class="nw-button"
+        nwTooltip="Typography"
+        [class.nw-button--selected]="isTypographySelected"
+        (click)="changeHeadingFormat(typographyMenu)">
+  <nw-svg-icon name="typography" [primary]="true" />
+
+  <svg height="15" viewBox="0 0 24 24" width="15">
+    <path d="M7 10l5 5 5-5H7z"></path>
+  </svg>
+</button>
+
+<span class="vertical-divider"></span>
+
+<button nwTooltip="Bold ⌘ + B"
+        class="nw-button"
+        [class.nw-button--selected]="componentState.bold()"
+        [boldFirstWord]="true"
+        (click)="changeBasicFormat('bold')">
+  <nw-svg-icon name="text-bold" [primary]="true" />
+</button>
+
+<button nwTooltip="Italic ⌘ + I"
+        class="nw-button"
+        [class.nw-button--selected]="componentState.italic()"
+        [boldFirstWord]="true"
+        (click)="changeBasicFormat('italic')">
+  <nw-svg-icon name="text-italic" [primary]="true" />
+</button>
+
+<button nwTooltip="Underline ⌘ + U"
+        class="nw-button"
+        [class.nw-button--selected]="componentState.underline()"
+        [boldFirstWord]="true"
+        (click)="changeBasicFormat('underline')">
+  <nw-svg-icon name="text-underline" [primary]="true" />
+</button>
+
+<button #linkMenu
+        class="nw-button"
+        nwTooltip="Insert a link"
+        [class.nw-button--selected]="isLink"
+        (click)="changeLinkFormat(linkMenu)">
+  <nw-svg-icon name="link" [primary]="true" />
+</button>
+
+<button class="nw-button"
+        nwTooltip="Code"
+        [class.nw-button--selected]="componentState.code()"
+        (click)="changeBasicFormat('code')">
+  <nw-svg-icon name="text-code" [primary]="true" />
+</button>
+
+<button class="nw-button"
+        nwTooltip="Strikethrough"
+        [class.nw-button--selected]="componentState.strike()"
+        (click)="changeBasicFormat('strike')">
+  <nw-svg-icon name="text-strike" [primary]="true" />
+</button>
+
+<button class="nw-button"
+        nwTooltip="Clear format"
+        (click)="clearFormat()">
+  <nw-svg-icon name="clear" [primary]="true" />
+</button>
+
+<span class="vertical-divider"></span>
+
+<button #textColorMenu
+        class="nw-button"
+        nwTooltip="Color text"
+        [class.nw-button--selected]="componentState.color()"
+        (click)="changeTextColorFormat(textColorMenu)">
+  <nw-svg-icon name="text-color" [primary]="true" />
+
+  <svg height="15" viewBox="0 0 24 24" width="15">
+    <path d="M7 10l5 5 5-5H7z"></path>
+  </svg>
+</button>
+
+<button #backgroundColorMenu
+        class="nw-button"
+        nwTooltip="Color background"
+        [class.nw-button--selected]="componentState.background()"
+        (click)="changeBackgroundColorFormat(backgroundColorMenu)">
+  <nw-svg-icon name="background-color" [primary]="true" />
+
+  <svg height="15" viewBox="0 0 24 24" width="15">
+    <path d="M7 10l5 5 5-5H7z"></path>
+  </svg>
+</button>
+
+<div class="vertical-divider"></div>
+
+<button class="nw-button"
+        nwTooltip="Bulleted list"
+        [class.nw-button--selected]="isBulletList"
+        (click)="changeListFormat('bullet')">
+  <nw-svg-icon name="unordered-list" [primary]="true" />
+</button>
+
+<button class="nw-button"
+        nwTooltip="Ordered list"
+        [class.nw-button--selected]="isOrderedList"
+        (click)="changeListFormat('ordered')">
+  <nw-svg-icon name="ordered-list" [primary]="true" />
+</button>
+
+<button class="nw-button"
+        nwTooltip="Checked list"
+        [class.nw-button--selected]="isCheckedList"
+        (click)="changeListFormat('checked')">
+  <nw-svg-icon name="check-list" [primary]="true" />
+</button>
+
+<span class="vertical-divider"></span>
+
+<button class="nw-button"
+        nwTooltip="Code block"
+        [class.nw-button--selected]="isCodeBlock"
+        (click)="changeBasicFormat('code-block')">
+  <nw-svg-icon name="code-block" [primary]="true" />
+</button>
+
+<button class="nw-button"
+        nwTooltip="Blockquote"
+        [class.nw-button--selected]="componentState.blockquote()"
+        (click)="changeBasicFormat('blockquote')">
+  <nw-svg-icon name="blockquote" [primary]="true" />
+</button>

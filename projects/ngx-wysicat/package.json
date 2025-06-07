@@ -1,0 +1,12 @@
+{
+  "name": "ngx-wysicat",
+  "version": "0.0.1",
+  "sideEffects": false,
+  "peerDependencies": {
+    "@angular/common": "^19.2.10",
+    "@angular/core": "^19.2.10",
+    "quill": "^2.0.3",
+    "quill-delta": "^5.1.0",
+    "parchment": "^3.0.0"
+  }
+}

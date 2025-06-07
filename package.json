@@ -1,13 +1,13 @@
 {
-  "name": "ngx-rich-document-editor",
+  "name": "ngx-wysicat",
   "version": "0.0.0",
   "scripts": {
     "start": "nx serve demo",
     "build:demo": "nx build demo",
-    "build:lib": "nx build ngx-rich-document-editor",
+    "build:lib": "nx build ngx-wysicat",
     "cleanup": "node scripts/cleanup.js && nx reset && pnpm install",
     "check-circular-deps": "npx madge --circular --extensions ts ./projects",
-    "analyze:lib": "nx run ngx-rich-document-editor:analyze",
+    "analyze:lib": "nx run wysicat:analyze",
     "analyze:demo": "nx build demo --configuration=production --source-map=true && npx source-map-explorer dist/demo/browser/main-*.js dist/demo/browser/main-*.js.map",
     "build:analyze-demo": "nx build demo --stats-json --named-chunks",
     "display:analyze-demo": "npx esbuild-visualizer --metadata=dist/demo/stats.json --open=true",
