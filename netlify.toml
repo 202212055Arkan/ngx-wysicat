@@ -1,5 +1,5 @@
 [build]
-  command = "nx build ngx-rich-document-editor --configuration production && nx build demo --configuration production"
+  command = "nx build ngx-wysicat --configuration production && nx build demo --configuration production"
   publish = "dist/demo/browser"
 
 [[redirects]]
