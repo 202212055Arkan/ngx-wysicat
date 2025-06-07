@@ -3,10 +3,10 @@
     <nw-header-author author [authorData]="authorData" />
     <div details class="header__right-content">
       <nw-header-details [lastUpdatedDate]="documentLastUpdatedDate()"
-                          [displayElements]="displayElements"
-                          [elementOrder]="elementOrder"
-                          [elementConfigs]="elementConfigs">
-    </nw-header-details>
+                         [displayElements]="displayElements"
+                         [elementOrder]="elementOrder"
+                         [elementConfigs]="elementConfigs">
+      </nw-header-details>
       <div class="vertical-divider vertical-divider--big"></div>
       <nw-document-settings-menu position="horizontal">
         <nw-favorite-button (favoriteToggle)="toggleAddToFavourite()" />
@@ -37,6 +37,9 @@
         </nw-tab>
         <nw-tab id="tab-media" label="Media">
           <nw-document-settings-media />
+        </nw-tab>
+        <nw-tab id="tab-share" label="Share">
+          <nw-export-html />
         </nw-tab>
       </nw-tab-group>
       <div style="display: flex; flex-direction: column; gap: 10px">

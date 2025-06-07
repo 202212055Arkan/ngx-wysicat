@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, signal, VERSION, WritableSignal } from '@angular/core';
 import {
   BlockCreateButtonComponent,
@@ -9,22 +10,21 @@ import {
   DocumentSettingsMenuComponent,
   EditorDataModel,
   ElementConfig,
-  ElementType,
+  ElementType, ExportHtmlComponent,
   FavoriteButtonComponent,
   HeaderAuthorComponent,
   HeaderAuthorModel,
   HeaderComponent,
   HeaderDetailsComponent,
   ReadOnlyButtonComponent,
-  WysicatRootComponent,
-  WysicatRootService,
   SettingsButtonComponent,
   TabComponent,
   TabGroupComponent,
+  WysicatRootComponent,
+  WysicatRootService,
 } from 'ngx-wysicat';
 
 import { MOCK_DATA } from './mock-data';
-import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -47,6 +47,7 @@ import { NgOptimizedImage } from '@angular/common';
     DocumentSettingsMediaComponent,
     DocumentSettingsGeneralComponent,
     NgOptimizedImage,
+    ExportHtmlComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -93,6 +94,7 @@ export class AppComponent {
     localStorage.setItem('ql_editorData', JSON.stringify(editorData));
     this.documentLastUpdatedDate.set(new Date());
   }
+
   loadData() {
     const loadedData = localStorage.getItem('ql_editorData');
     if (loadedData) {
@@ -108,8 +110,7 @@ export class AppComponent {
     this.richDocumentService.setReadOnly(value);
   }
 
-  toggleAddToFavourite() {
-  }
+  toggleAddToFavourite() {}
 
   loadMockData() {
     this.data.set([...MOCK_DATA]);
@@ -117,7 +118,7 @@ export class AppComponent {
 
   applyDemoSettings(): void {
     const demoSettings = {
-      selectedFontType: "sans",
+      selectedFontType: 'sans',
       fontSize: 1,
       maxWidthPercent: 0.94,
       lineSpacingMultiplier: 6.7,
@@ -133,7 +134,7 @@ export class AppComponent {
       blockOperationsMenu: true,
       textToolbar: true,
       wordsCounter: true,
-      blockSettings: true
+      blockSettings: true,
     };
 
     localStorage.setItem('rde_documentSettings', JSON.stringify(demoSettings));
