@@ -1,0 +1,79 @@
+{
+  "name": "ngx-rich-document-editor",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "nx serve demo",
+    "build:demo": "nx build demo",
+    "build:lib": "nx build ngx-rich-document-editor",
+    "cleanup": "node scripts/cleanup.js && nx reset && pnpm install",
+    "check-circular-deps": "npx madge --circular --extensions ts ./projects",
+    "analyze:lib": "nx run ngx-rich-document-editor:analyze",
+    "analyze:demo": "nx build demo --configuration=production --source-map=true && npx source-map-explorer dist/demo/browser/main-*.js dist/demo/browser/main-*.js.map",
+    "build:analyze-demo": "nx build demo --stats-json --named-chunks",
+    "display:analyze-demo": "npx esbuild-visualizer --metadata=dist/demo/stats.json --open=true",
+    "lint": "nx lint",
+    "prepare": "husky"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/cdk": "^20.0.1",
+    "@angular/common": "^20.0.0",
+    "@angular/compiler": "^20.0.0",
+    "@angular/core": "^20.0.0",
+    "@angular/elements": "^20.0.1",
+    "@angular/forms": "^20.0.0",
+    "@angular/platform-browser": "^20.0.0",
+    "@angular/platform-browser-dynamic": "^20.0.0",
+    "parchment": "^3.0.0",
+    "quill": "^2.0.3",
+    "quill-delta": "^5.1.0",
+    "rxjs": "~7.8.2",
+    "tslib": "^2.8.1",
+    "uuid": "^11.1.0",
+    "zone.js": "0.15.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "20.0.0",
+    "@angular-devkit/core": "20.0.0",
+    "@angular-devkit/schematics": "20.0.0",
+    "@angular-eslint/eslint-plugin": "^19.6.0",
+    "@angular-eslint/eslint-plugin-template": "19.6.0",
+    "@angular-eslint/template-parser": "19.6.0",
+    "@angular/cli": "20.0.0",
+    "@angular/compiler-cli": "20.0.0",
+    "@html-eslint/eslint-plugin": "0.41.0",
+    "@html-eslint/parser": "^0.41.0",
+    "@nx/angular": "21.1.2",
+    "@nx/devkit": "21.1.2",
+    "@nx/eslint-plugin": "21.1.2",
+    "@nx/js": "21.1.2",
+    "@nx/web": "21.1.2",
+    "@nx/workspace": "21.1.2",
+    "@schematics/angular": "20.0.0",
+    "@swc-node/register": "~1.10.10",
+    "@types/jasmine": "5.1.8",
+    "@types/node": "^22.15.24",
+    "@types/quill": "2.0.14",
+    "angular-eslint": "19.6.0",
+    "eslint": "^9.27.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "husky": "^9.1.7",
+    "jsonc-eslint-parser": "^2.4.0",
+    "ng-packagr": "20.0.0",
+    "nx": "21.1.2",
+    "prettier": "^3.5.3",
+    "source-map-explorer": "^2.5.3",
+    "typescript": "5.8.3",
+    "typescript-eslint": "8.33.0"
+  },
+  "madge": {
+    "detectiveOptions": {
+      "ts": {
+        "skipTypeImports": true
+      }
+    }
+  },
+  "packageManager": "pnpm@10.11.0"
+}

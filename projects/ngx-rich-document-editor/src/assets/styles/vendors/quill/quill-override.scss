@@ -1,0 +1,227 @@
+.ql-container {
+  width: 100%;
+}
+
+.ql-container.ql-bubble {
+  font-family: var(--rde-font-family);
+}
+
+.ql-editor {
+  padding: var(--editor-padding);
+
+  .ql-block {
+    font-size: var(--editor-paragraph-font-size);
+  }
+
+  li.ql-block-list {
+    font-size: var(--editor-list-font-size);
+    position: relative;
+    padding: var(--editor-block-padding) 0 var(--editor-block-padding) 2rem;
+    color: var(--rde-color-primary-900);
+    line-height: 1.2;
+  }
+
+  h1, h2, h3, h4, h5, h6, .ql-block, .ql-block-list, blockquote {
+    font-family: var(--editor-font-family);
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    span, strong, a, em, u, code {
+      font-family: var(--editor-font-family);
+    }
+
+    &.rde-dragging {
+      background-color: var(--rde-color-primary-200);
+      opacity: 0.2;
+      border-radius: 4px;
+    }
+  }
+
+  .ql-block {
+    line-height: var(--editor-paragraph-line-height, 1.42);
+    color: var(--rde-color-primary-900);
+    font-weight: 400;
+    padding: var(--editor-block-padding) 0;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    padding: var(--editor-block-padding) 0;
+  }
+}
+
+.ql-bubble .ql-editor {
+  h1 {
+    font-size: var(--editor-h1-font-size);
+    letter-spacing: -0.02em;
+    line-height: var(--editor-h1-line-height, 30px);
+  }
+
+  h2 {
+    font-size: var(--editor-h2-font-size);
+    letter-spacing: -0.015em;
+    line-height: var(--editor-h2-line-height, 28px);
+  }
+
+  h3 {
+    font-size: var(--editor-h3-font-size);
+    line-height: var(--editor-h3-line-height, 25px);
+  }
+
+  h4 {
+    line-height: var(--editor-h4-line-height, 22px);
+    font-size: var(--editor-h4-font-size);
+  }
+
+  blockquote {
+    border-left: 3px solid #e5e7eb;
+    padding: var(--editor-block-padding) 13px;
+    font-weight: 400;
+    font-size: var(--editor-blockquote-font-size);
+  }
+
+  img {
+    margin: 5px 0;
+    height: auto;
+    border-radius: 0.5rem;
+    border: 1px solid var(--rde-color-primary-400);
+  }
+
+  ul, ol {
+    padding: 0;
+    margin: 1.5em 0;
+  }
+
+  li {
+    margin-bottom: 0;
+    padding: calc(var(--editor-block-padding) * 0.2 * var(--rde-editor-line-spacing-multiplier)) 0 calc(var(--editor-block-padding) * 0.2 * var(--rde-editor-line-spacing-multiplier)) 2rem;
+  }
+
+  li.ql-block-list {
+    //padding-top: 0 + calc(1px * var(--editor-block-padding-multiplier));
+    //padding-bottom: 0 + calc(10px * var(--editor-block-padding-multiplier));
+    color: var(--rde-color-primary-900);
+    line-height: 1.2;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+    margin: 0;
+  }
+
+  .ql-code-block-container {
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    background-color: var(--rde-color-primary-800);
+    font-size: calc(var(--editor-codeblock-font-size) * 0.85);
+
+    .ql-code-block {
+      padding-left: 10px;
+      padding-right: 10px;
+
+      &:first-child {
+        padding-top: 10px;
+      }
+
+      &:last-child {
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
+
+.ql-bubble {
+  .ql-tooltip {
+    z-index: 9999;
+  }
+
+  .ql-toolbar {
+
+    button {
+      width: auto;
+      display: flex;
+      gap: 0;
+      padding: 5px;
+
+      &:hover, &:focus {
+        color: red; // :)
+        background-color: var(--rde-color-primary-100);
+      }
+    }
+  }
+}
+
+
+.ql-editor li > .ql-ui:before {
+  margin-left: -1.8em;
+}
+
+.ql-editor ol > li[data-list=unchecked] > .ql-ui::before {
+  transition: border-color 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86), background 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  content: "";
+  background: transparent;
+  border: 1px solid var(--rde-color-primary-300);
+  width: 0.95em;
+  height: 0.95em;
+  margin-top: 0.05em;
+  margin-left: -1.6em;
+  padding: 0;
+  border-radius: 4px;
+  position: absolute;
+}
+
+.ql-editor ol > li[data-list=checked] > .ql-ui::before {
+  transition: border-color 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86), background 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  content: "";
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="%23ffffff"><path fill-rule="evenodd" d="M18.707 7.293a1 1 0 0 1 0 1.414l-7.996 7.996-.003.004a1 1 0 0 1-1.415 0l-4-4a1 1 0 1 1 1.414-1.414L10 14.586l7.293-7.293a1 1 0 0 1 1.414 0z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M18.707 7.293a1 1 0 0 1 0 1.414l-7.996 7.996-.003.004a1 1 0 0 1-1.415 0l-4-4a1 1 0 1 1 1.414-1.414L10 14.586l7.293-7.293a1 1 0 0 1 1.414 0z" clip-rule="evenodd"/></svg>');
+  background-size: cover;
+  color: var(--rde-color-white);
+  background-color: var(--rde-color-green-500);
+  cursor: pointer;
+  border: 1px solid var(--rde-color-green-500);
+  width: 0.95em;
+  height: 0.95em;
+  margin-top: 0.05em;
+  margin-left: -1.6em;
+  text-align: center;
+  border-radius: 4px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+.ql-editor ol > li[data-list=checked] {
+  text-decoration: line-through;
+}
+
+@supports (counter-set:none) {
+  .ql-editor .ql-block, .ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4, .ql-editor h5, .ql-editor h6 {
+    counter-set: list-0 list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9 !important;
+  }
+}
+
+@supports not (counter-set:none) {
+  .ql-editor ql-block, .ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4, .ql-editor h5, .ql-editor h6 {
+    counter-reset: list-0 list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9 !important;
+  }
+}
+
+.ql-container.ql-bubble:not(.ql-disabled) a:not(.ql-close)::before {
+  display: none !important;
+}
+
+.ql-container.ql-bubble:not(.ql-disabled) a:not(.ql-close)::after {
+  display: none !important;
+}
+
+.ql-block a {
+  cursor: pointer;
+}

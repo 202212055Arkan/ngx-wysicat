@@ -1,0 +1,33 @@
+<section class="features-section" id="features">
+  <div class="container">
+    <h2 class="section-title">🐾 Why You’ll Love Our Editor</h2>
+    <p class="section-description">create, edit, and share docs effortlessly and unlock productivity with fast, flexible tools for seamless collaboration</p>
+
+    <div class="features-container">
+      <div class="features-grid">
+        @for (feature of features; track feature.title) {
+          <div class="feature-card" [attr.data-index]="$index">
+            <div class="feature-image-container">
+              <img src="{{feature.image}}" alt="{{feature.title}}" class="feature-image">
+            </div>
+            <div class="feature-content">
+              <h3 class="feature-title">{{feature.title}}</h3>
+              <p *ngIf="$index === 0" class="feature-description highlight-speed">
+                typing feels instant with zero lag. our editor responds faster than you can blink, handling massive documents with ease while keeping your cpu cool and your battery happy
+              </p>
+              <p *ngIf="$index === 1" class="feature-description highlight-customize">
+                build your perfect workspace. from markdown to math equations, themes to toolbars, customize every aspect of your editing experience to work exactly the way
+              </p>
+              <p *ngIf="$index === 2" class="feature-description highlight-opensource">
+                no paywalls, no restrictions, just pure freedom. fork it, extend it, or contribute back. Join a vibrant community where your ideas shape the future of document editing
+              </p>
+              <span class="feature-link-container">
+                <span class="feature-link-icon">{{feature.linkIcon}}</span>&nbsp;<a [href]="feature.linkUrl" class="feature-link" [ngClass]="'feature-link-' + $index">{{feature.linkText}}</a>
+              </span>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+@let documentSettings = richDocumentService.documentSettings();
+
+<div id="rde-root">
+  <div class="rde-header" [class.closed]="!documentSettings.header">
+    <ng-content select="[header]" />
+  </div>
+
+  <div class="rde-toolbar-wrapper rde-toolbar-wrapper__static" [class.closed]="!documentSettings.topToolbar || documentSettings.readOnly">
+    <div id="rde-text-toolbar-wrapper"></div>
+  </div>
+
+  <div id="rde-quill-wrapper" cdkScrollable (click)="onQuillWrapperClick($event)">
+    <div id="rde-quill-wrapper__max-width">
+      <div #editor></div>
+    </div>
+  </div>
+
+  <ng-content select="[blockMenu]" />
+
+  @if (configsService.getFeatureFlag('blockDragAndDrop')) {
+    <div id="rde-drag-and-drop-wrapper"></div>
+  }
+
+  <div class="rde-floating-menu">
+    <ng-content select="[floatingMenu]" />
+  </div>
+</div>
+
+<ng-content select="[documentSettings]" />
+
+<div id="rde-toolbar-wrapper">
+  <div class="rde-toolbar-wrapper rde-toolbar-wrapper__floating" [style.display]="documentSettings.selectionToolbar && !documentSettings.readOnly ? 'block' : 'none'">
+    <ng-container #toolbar />
+  </div>
+</div>

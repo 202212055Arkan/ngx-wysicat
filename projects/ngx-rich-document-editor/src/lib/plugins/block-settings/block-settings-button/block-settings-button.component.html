@@ -1,0 +1,10 @@
+<button #blockOptionsMenu
+        rdeTooltip="Drag to move"
+        tooltipLine2="Click to open menu"
+        class="rde-button rde-button__with-icon"
+        [boldFirstWord]="true"
+        [rdeDraggable]="configs.getFeatureFlag('blockDragAndDrop')"
+        (click)="openMenu(blockOptionsMenu)">
+  <rde-svg-icon [name]="configs.getFeatureFlag('blockDragAndDrop') ? 'drag-and-drop-vertical' : 'gear'"
+                [secondary]="true"/>
+</button>

@@ -1,0 +1,70 @@
+:host {
+  --menu-card-space: 13px;
+  --menu-card-space-xs: 7px;
+  display: block;
+  background-color: var(--rde-color-white);
+  border: 1px solid var(--rde-color-primary-300);
+
+  border-radius: 8px;
+  box-shadow: var(--shadow-xs);
+  min-width: 250px;
+  padding: 0;
+}
+
+.title {
+  text-transform: capitalize;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--rde-color-primary-500);
+  padding: var(--menu-card-space);
+  font-family: var(--rde-font-family);
+}
+
+.sub-title {
+  text-transform: capitalize;
+  font-size: 12px;
+  font-family: var(--rde-font-family);
+  font-weight: 500;
+  color: var(--rde-color-primary-500);
+  padding-bottom: var(--menu-card-space-xs);
+}
+
+.input-container {
+  margin: 0 var(--menu-card-space) var(--menu-card-space) var(--menu-card-space);
+}
+
+
+.menu-sections {
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(400px - 120px);
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  //max-height: 300px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--rde-color-primary-800);
+  }
+}
+
+.empty {
+  padding: 12px 8px;
+  font-size: 13px;
+  color: var(--rde-color-primary-400);
+  font-family: var(--rde-font-family);
+}
+
+//.highlight {
+//  background-color: var(--color-primary-100);
+//}

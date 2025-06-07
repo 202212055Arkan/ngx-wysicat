@@ -1,0 +1,6 @@
+<div class="slider">
+  <div class="slider__track">
+    <div class="slider__progress" [style.width]="progressWidth()"></div>
+  </div>
+  <input type="range" class="slider__input" aria-label="Slider control" [min]="min()" [max]="max()" [step]="step()" [value]="internalValue()" (input)="onInputChange($event)" />
+</div>

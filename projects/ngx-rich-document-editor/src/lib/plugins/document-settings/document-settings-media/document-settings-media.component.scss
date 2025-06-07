@@ -1,0 +1,123 @@
+.link-count {
+  font-size: 14px;
+  color: var(--rde-color-primary-500);
+  margin-bottom: 16px;
+  padding: 8px;
+  background-color: var(--rde-color-white);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.references-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.reference-item {
+  display: flex;
+  background: #f8fafc;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+
+  .rde-button {
+    flex: 1;
+    gap: 17px;
+    background-color: transparent;
+    padding: 8px 10px;
+    text-align: left;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .remove-button {
+    background: transparent;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    padding: 8px;
+    margin-right: 4px;
+    border-radius: 4px;
+    flex-shrink: 0;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+.reference-icon {
+  color: #64748b;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.reference-content {
+  flex-direction: column;
+  display: flex;
+  text-align: left;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.reference-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1px;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.reference-title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #0f172a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  font-family: var(--rde-font-family);
+
+}
+
+.reference-metadata {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  font-size: 12px;
+  margin-top: 3px;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  font-family: var(--rde-font-family);
+}
+
+.reference-url {
+  white-space: nowrap;
+  font-family: var(--rde-font-family);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--rde-color-primary-500);
+  text-decoration: none;
+  width: 100%;
+  display: block;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.no-references {
+  font-size: 13px;
+  color: var(--rde-color-primary-400);
+  font-family: var(--rde-font-family);
+}

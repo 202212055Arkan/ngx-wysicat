@@ -1,0 +1,44 @@
+.ql-divider {
+  position: relative;
+  height: 1px;
+  padding: 0.5em 0;
+  margin: 0;
+  background: none;
+  border: 5px solid transparent;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0.5em;
+    height: 1px;
+    background-color: #e1e1e1;
+  }
+}
+
+.ql-divider.rde-selected {
+  outline: solid;
+}
+
+.ql-editor .ql-block[data-placeholder]::before,
+.ql-editor h1[data-placeholder]::before,
+.ql-editor h2[data-placeholder]::before,
+.ql-editor h3[data-placeholder]::before,
+.ql-editor h4[data-placeholder]::before,
+{
+  content: attr(data-placeholder);
+  color: var(--rde-color-primary-400);
+  position: absolute;
+  pointer-events: none;
+  left: 3px;
+  opacity: 0.6;
+  z-index: 9999;
+}
+
+.ql-initial-template {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+

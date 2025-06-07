@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  position: relative;
+  z-index: 999;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 18px 50px 18px 67px;
+  justify-content: space-between;
+
+  &__right-content {
+  }
+
+  &__left-content {
+    display: flex;
+    align-items: center;
+    gap: 10px
+  }
+}
+

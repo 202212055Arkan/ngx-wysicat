@@ -1,0 +1,45 @@
+<span class="section-title">Font</span>
+<div class="font-selection">
+  @for (font of uiSettings.fontTypes(); track $index) {
+    <button class="rde-button font-option" [class.active]="font === uiSettings.selectedFontType()" (click)="selectFontType(font)">
+      <div class="font-preview" [style.font-family]="getFontFamily(font)">Aa</div>
+      <div class="font-name" [style.font-family]="getFontFamily(font)">{{ font }}</div>
+    </button>
+  }
+</div>
+
+<div class="range-controls">
+  @for (range of uiSettings.ranges(); track $index) {
+    <div class="control-item">
+      <div class="control-header">
+        <span class="control-label">{{ range.label }}</span>
+        <span class="control-value">{{ range.value }}{{ range.unit }}</span>
+      </div>
+
+      <rde-range-slider [step]="range.step"
+                        [value]="range.value"
+                        [min]="range.min"
+                        [max]="range.max"
+                        (valueChange)="changeRangeValue($event, range.key)"
+      />
+    </div>
+  }
+</div>
+
+<span class="section-title">Features</span>
+
+<div class="features-container">
+  <div class="features-grid">
+    @for (feature of uiSettings.features(); track $index) {
+      <div class="feature-item">
+        <div class="feature-content">
+          <rde-svg-icon [name]="feature.icon" [primary]="true" />
+          <div>
+            <h4 class="feature-title">{{ feature.name }}</h4>
+          </div>
+        </div>
+        <rde-toggle-switch [enabled]="feature.enabled" (enabledChange)="toggleFeature(feature.key, $event)" />
+      </div>
+    }
+  </div>
+</div>

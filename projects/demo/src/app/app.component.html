@@ -1,0 +1,46 @@
+<rde-rich-document [editorData]="data()" (editorDataChanged)="onEditorDataChanged($event)">
+  <rde-header header>
+    <rde-header-author author [authorData]="authorData" />
+    <div details class="header__right-content">
+      <rde-header-details [lastUpdatedDate]="documentLastUpdatedDate()"
+                          [displayElements]="displayElements"
+                          [elementOrder]="elementOrder"
+                          [elementConfigs]="elementConfigs">
+        <button class="modern-button" (click)="loadMockData()">Load Mock Data</button>
+      </rde-header-details>
+      <div class="vertical-divider vertical-divider--big"></div>
+      <rde-document-settings-menu position="horizontal">
+        <rde-favorite-button (favoriteToggle)="toggleAddToFavourite()" />
+        <rde-read-only-button [isReadOnly]="isReadOnly()" (clicked)="setReadOnly($event)" />
+        <rde-settings-button (settingsToggle)="toggleSidebar()" />
+      </rde-document-settings-menu>
+    </div>
+  </rde-header>
+
+  <rde-document-settings-menu floatingMenu position="vertical">
+    <rde-favorite-button (favoriteToggle)="toggleAddToFavourite()" />
+    <rde-read-only-button [isReadOnly]="isReadOnly()" (clicked)="setReadOnly($event)" />
+    <rde-settings-button (settingsToggle)="toggleSidebar()" />
+  </rde-document-settings-menu>
+
+  @if (!isReadOnly()) {
+    <rde-block-menu blockMenu>
+      <rde-block-create-button />
+      <rde-block-settings />
+    </rde-block-menu>
+  }
+
+  <div class="dc" documentSettings [class.closed]="!documentSettingsOpened()">
+    <rde-document-settings>
+      <rde-tab-group>
+        <rde-tab id="tab-general" label="General">
+          <rde-document-settings-general />
+        </rde-tab>
+        <rde-tab id="tab-media" label="Media">
+          <rde-document-settings-media />
+        </rde-tab>
+      </rde-tab-group>
+      <img width="93" height="20" [ngSrc]="`https://img.shields.io/badge/Angular_${version.full}-blue`" alt="Current Angular Version" />
+    </rde-document-settings>
+  </div>
+</rde-rich-document>

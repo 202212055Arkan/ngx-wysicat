@@ -1,0 +1,8 @@
+[build]
+  command = "nx build ngx-rich-document-editor --configuration production && nx build demo --configuration production"
+  publish = "dist/demo/browser"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

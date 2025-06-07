@@ -1,0 +1,123 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.demo-section {
+  padding: 2rem 2rem 4rem;
+  font-family: var(--lp-font-body);
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.section-title {
+  font-family: var(--lp-font-headers);
+  font-size: var(--font-size-section);
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.section-description {
+  font-family: var(--lp-font-body);
+  font-size: var(--font-size-section-description);
+  color: var(--text-secondary);
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  text-align: center;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.demo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.demo-preview {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.demo-browser-header {
+  background: #f8fafc;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+}
+
+.browser-dots {
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 1rem;
+}
+
+.browser-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e2e8f0;
+}
+
+.browser-dot:nth-child(1) {
+  background: #ef4444;
+}
+
+.browser-dot:nth-child(2) {
+  background: #f59e0b;
+}
+
+.browser-dot:nth-child(3) {
+  background: #10b981;
+}
+
+.browser-address-bar {
+  text-align: left;
+  padding-left: 10px;
+  font-size: 0.8rem;
+  place-content: center;
+  flex: 1;
+  height: 28px;
+  background: #fff;
+  color: #4c5a75;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+.demo-content {
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.editor-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+

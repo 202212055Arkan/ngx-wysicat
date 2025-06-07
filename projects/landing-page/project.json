@@ -1,0 +1,122 @@
+{
+  "name": "landing-page",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "projects/landing-page/src",
+  "prefix": "app",
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "ngx-rich-document-editor"
+        }
+      ],
+      "options": {
+        "outputPath": "dist/landing-page",
+        "index": "projects/landing-page/src/index.html",
+        "browser": "projects/landing-page/src/main.ts",
+        "polyfills": [
+          "zone.js"
+        ],
+        "tsConfig": "projects/landing-page/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "projects/landing-page/src/assets/img",
+            "output": "assets/img"
+          },
+          {
+            "glob": "**/*.svg",
+            "input": "./node_modules/ngx-rich-document-editor/assets/icons",
+            "output": "projects/landing-page/assets/img/icons"
+          }
+        ],
+        "styles": [
+          "node_modules/quill/dist/quill.bubble.css",
+          "dist/ngx-rich-document-editor/assets/styles/main.scss",
+          "projects/landing-page/src/assets/styles/main.scss"
+        ],
+        "scripts": [
+          "node_modules/quill/dist/quill.js"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kB",
+              "maximumError": "1MB"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kB",
+              "maximumError": "8kB"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "ngx-rich-document-editor"
+        }
+      ],
+      "configurations": {
+        "production": {
+          "buildTarget": "landing-page:build:production"
+        },
+        "development": {
+          "buildTarget": "landing-page:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "continuous": true
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n"
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "polyfills": [
+          "zone.js",
+          "zone.js/testing"
+        ],
+        "tsConfig": "projects/landing-page/tsconfig.spec.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "projects/landing-page/public"
+          }
+        ],
+        "styles": [
+          "projects/landing-page/src/styles.scss"
+        ],
+        "scripts": []
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
