@@ -56,8 +56,8 @@ export class AppComponent {
   version = VERSION;
 
   authorData: HeaderAuthorModel = {
-    name: 'Sir Meowsalot Whiskerface',
-    title: 'Mouse Operations Specialist',
+    name: 'Sir Meowsalot',
+    title: 'Mouse Specialist',
     imageUrl: '/assets/img/catto.jpg',
   };
   documentLastUpdatedDate = signal(new Date());
@@ -113,5 +113,30 @@ export class AppComponent {
 
   loadMockData() {
     this.data.set([...MOCK_DATA]);
+  }
+
+  applyDemoSettings(): void {
+    const demoSettings = {
+      selectedFontType: "sans",
+      fontSize: 1,
+      maxWidthPercent: 0.94,
+      lineSpacingMultiplier: 6.7,
+      readOnly: false,
+      topToolbar: true,
+      selectionToolbar: true,
+      header: true,
+      emoji: true,
+      createBlock: true,
+      blockDragAndDrop: true,
+      blockDuplication: true,
+      blockRemoval: true,
+      blockOperationsMenu: true,
+      textToolbar: true,
+      wordsCounter: true,
+      blockSettings: true
+    };
+
+    localStorage.setItem('rde_documentSettings', JSON.stringify(demoSettings));
+    window.location.reload();
   }
 }

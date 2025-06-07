@@ -50,4 +50,12 @@
     transform: translateY(1px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+
+  &.demo-settings-button {
+    background: linear-gradient(135deg, #22a45d 0%, #4ad295 100%);
+
+    &:hover {
+      background: linear-gradient(135deg, #1c8f4e 0%, #3dbd83 100%);
+    }
+  }
 }

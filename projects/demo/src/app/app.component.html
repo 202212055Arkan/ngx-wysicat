@@ -6,8 +6,7 @@
                           [displayElements]="displayElements"
                           [elementOrder]="elementOrder"
                           [elementConfigs]="elementConfigs">
-        <button class="modern-button" (click)="loadMockData()">Load Mock Data</button>
-      </nw-header-details>
+    </nw-header-details>
       <div class="vertical-divider vertical-divider--big"></div>
       <nw-document-settings-menu position="horizontal">
         <nw-favorite-button (favoriteToggle)="toggleAddToFavourite()" />
@@ -40,7 +39,11 @@
           <nw-document-settings-media />
         </nw-tab>
       </nw-tab-group>
-      <img width="93" height="20" [ngSrc]="`https://img.shields.io/badge/Angular_${version.full}-blue`" alt="Current Angular Version" />
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <img width="93" height="20" [ngSrc]="`https://img.shields.io/badge/Angular_${version.full}-blue`" alt="Current Angular Version" />
+        <button class="modern-button" (click)="loadMockData()">Refresh Demo Data</button>
+        <button class="modern-button demo-settings-button" (click)="applyDemoSettings()">Refresh Demo Settings</button>
+      </div>
     </nw-document-settings>
   </div>
 </nw-root>
