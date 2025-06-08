@@ -2,6 +2,10 @@
   <nw-header header>
     <nw-header-author author [authorData]="authorData" />
     <div details class="header__right-content">
+      <div style="display: flex; align-items: center; gap: 20px">
+        <button class="modern-button" (click)="loadMockData()">Refresh Demo Data</button>
+        <img width="93" height="20" [ngSrc]="`https://img.shields.io/badge/Angular_${version.full}-blue`" alt="Current Angular Version" />
+      </div>
       <nw-header-details [lastUpdatedDate]="documentLastUpdatedDate()"
                          [displayElements]="displayElements"
                          [elementOrder]="elementOrder"
@@ -39,14 +43,12 @@
           <nw-document-settings-media />
         </nw-tab>
         <nw-tab id="tab-share" label="Share">
-          <nw-export-html />
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <nw-export-html />
+            <nw-export-markdown />
+          </div>
         </nw-tab>
       </nw-tab-group>
-      <div style="display: flex; flex-direction: column; gap: 10px">
-        <img width="93" height="20" [ngSrc]="`https://img.shields.io/badge/Angular_${version.full}-blue`" alt="Current Angular Version" />
-        <button class="modern-button" (click)="loadMockData()">Refresh Demo Data</button>
-        <button class="modern-button demo-settings-button" (click)="applyDemoSettings()">Refresh Demo Settings</button>
-      </div>
     </nw-document-settings>
   </div>
 </nw-root>

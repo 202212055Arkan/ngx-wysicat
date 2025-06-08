@@ -53,7 +53,7 @@ export const DOCUMENT_FEATURES: DocumentSettingsFeature[] = [
   },
   {
     key: DOCUMENT_SETTINGS_KEYS.EMOJI,
-    name: 'Emojis',
+    name: 'Emojis Command',
     icon: 'emoji',
     enabled: false,
   },

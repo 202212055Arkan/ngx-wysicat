@@ -10,7 +10,7 @@ import {
   DocumentSettingsMenuComponent,
   EditorDataModel,
   ElementConfig,
-  ElementType, ExportHtmlComponent,
+  ElementType, ExportHtmlComponent, ExportMarkdownComponent,
   FavoriteButtonComponent,
   HeaderAuthorComponent,
   HeaderAuthorModel,
@@ -48,6 +48,7 @@ import { MOCK_DATA } from './mock-data';
     DocumentSettingsGeneralComponent,
     NgOptimizedImage,
     ExportHtmlComponent,
+    ExportMarkdownComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -114,6 +115,7 @@ export class AppComponent {
 
   loadMockData() {
     this.data.set([...MOCK_DATA]);
+    this.applyDemoSettings();
   }
 
   applyDemoSettings(): void {
