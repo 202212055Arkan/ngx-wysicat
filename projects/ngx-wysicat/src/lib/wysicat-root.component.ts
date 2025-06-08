@@ -76,7 +76,7 @@ export class WysicatRootComponent implements OnInit, AfterViewInit, OnDestroy {
 
       this.quillCreatorService.init(editor.nativeElement, toolbar, this.editorData());
     } catch (error: unknown) {
-      console.error('Failed to initialize nw-rich-document component:', error);
+      console.error('Failed to initialize nw-root component:', error);
     }
   }
 

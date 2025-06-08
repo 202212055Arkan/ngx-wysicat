@@ -2,32 +2,14 @@ import { inject, Injectable } from '@angular/core';
 import Delta from 'quill-delta';
 import { v4 as uuidv4 } from 'uuid';
 
-import { EditorDataModel } from '../wysicat-root.models';
 import { QuillStore } from '../store';
+import { EditorDataModel } from '../wysicat-root.models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DocumentValidatorService {
   private readonly store = inject(QuillStore);
-
-  constructor() {
-    // dev monitoring
-    setInterval(() => {
-      const quill = this.store.quill();
-
-      if (quill) {
-        quill.getLines().forEach((line) => {
-          // @ts-ignore
-          if (!line.attributes.attributes.blockId) {
-            console.log(line.domNode);
-            // @ts-ignore
-            console.log(line.attributes.attributes.blockId);
-          }
-        });
-      }
-    }, 10_000);
-  }
 
   ensureValidDocument(content: EditorDataModel[]): void {
     const delta = new Delta({ ops: content });
@@ -37,6 +19,7 @@ export class DocumentValidatorService {
         if (op.insert === '\n' || op.insert.divider) {
           op.attributes = op.attributes || {};
           if (!op.attributes['blockId']) {
+            console.error('Editor data validation: Missing blockId attribute');
             op.attributes['blockId'] = uuidv4();
           }
         }

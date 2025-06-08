@@ -22,7 +22,9 @@ import { DocumentValidatorService } from '../document-validator.service';
 import { BlockIdAttributor } from './configs/attributors/block-id.attributor';
 import { CustomBlock } from './configs/blots/block.blot';
 import { DividerBlot } from './configs/blots/divider.blot';
+import { LinkedinBlot } from './configs/blots/linkedin.blot';
 import { ListItem } from './configs/blots/list-block.blot';
+import { TweetBlot } from './configs/blots/twitter.blot';
 import { PlaceholderModule } from './configs/modules/placeholder.module';
 import { CustomBubbleTheme } from './configs/themes/custom-bubble-theme';
 import { BlockSelectionService } from './utils/block-selection.service';
@@ -73,6 +75,8 @@ export class QuillCreatorService {
     Quill.register(ListItem, true);
     Quill.register(DividerBlot, true);
     Quill.register('modules/placeholder', PlaceholderModule);
+    Quill.register('formats/tweet', TweetBlot);
+    Quill.register('formats/linkedin', LinkedinBlot);
 
     Quill.register('formats/link', CustomLink, true);
   }
@@ -109,6 +113,8 @@ export class QuillCreatorService {
         theme: 'custom-bubble',
         bounds: rootElement,
         formats: [
+          'linkedin',
+          'tweet',
           'blockId',
           'linkId',
           'divider',
