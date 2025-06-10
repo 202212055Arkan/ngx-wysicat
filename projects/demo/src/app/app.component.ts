@@ -10,12 +10,14 @@ import {
   DocumentSettingsMenuComponent,
   EditorDataModel,
   ElementConfig,
-  ElementType, ExportHtmlComponent, ExportMarkdownComponent,
+  ElementType,
   FavoriteButtonComponent,
   HeaderAuthorComponent,
   HeaderAuthorModel,
   HeaderComponent,
   HeaderDetailsComponent,
+  HistoryComponent,
+  HistoryVersion,
   ReadOnlyButtonComponent,
   SettingsButtonComponent,
   TabComponent,
@@ -24,6 +26,7 @@ import {
   WysicatRootService,
 } from 'ngx-wysicat';
 
+import { formatHistoryData } from './history-formatter';
 import { MOCK_DATA } from './mock-data';
 
 @Component({
@@ -47,8 +50,7 @@ import { MOCK_DATA } from './mock-data';
     DocumentSettingsMediaComponent,
     DocumentSettingsGeneralComponent,
     NgOptimizedImage,
-    ExportHtmlComponent,
-    ExportMarkdownComponent,
+    HistoryComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -56,6 +58,7 @@ import { MOCK_DATA } from './mock-data';
 export class AppComponent {
   data: WritableSignal<EditorDataModel[]> = signal([]);
   version = VERSION;
+  historyList = signal<HistoryVersion[]>(formatHistoryData());
 
   authorData: HeaderAuthorModel = {
     name: 'Sir Meowsalot',
@@ -112,6 +115,18 @@ export class AppComponent {
   }
 
   toggleAddToFavourite() {}
+
+  addHistoryVersion(version: HistoryVersion) {
+    this.historyList.update((versions) => [version, ...versions]);
+  }
+
+  removeHistoryVersion(versionId: string) {
+    this.historyList.set(this.historyList().filter((version) => version.id !== versionId));
+  }
+
+  clearHistoryVersions() {
+    this.historyList.set([]);
+  }
 
   loadMockData() {
     this.data.set([...MOCK_DATA]);

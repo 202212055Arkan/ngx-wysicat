@@ -12,6 +12,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       height: 100%;
       min-width: 0;
       flex-shrink: 0;
+      width: 100%;
+      box-sizing: border-box;
+      scrollbar-gutter: stable;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
   `,
 })

@@ -36,10 +36,20 @@
           <nw-svg-icon [name]="feature.icon" [primary]="true" />
           <div>
             <h4 class="feature-title">{{ feature.name }}</h4>
+            <div class="feature-description">
+              {{ getFeatureDescription(feature.key) }}
+            </div>
           </div>
         </div>
         <nw-toggle-switch [enabled]="feature.enabled" (enabledChange)="toggleFeature(feature.key, $event)" />
       </div>
     }
   </div>
+</div>
+
+<div class="export">
+  <span class="section-title">Export</span>
+
+  <nw-export-html />
+  <nw-export-markdown />
 </div>

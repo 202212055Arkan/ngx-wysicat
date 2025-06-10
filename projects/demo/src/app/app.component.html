@@ -2,10 +2,6 @@
   <nw-header header>
     <nw-header-author author [authorData]="authorData" />
     <div details class="header__right-content">
-      <div style="display: flex; align-items: center; gap: 20px">
-        <button class="modern-button" (click)="loadMockData()">Refresh Demo Data</button>
-        <img width="93" height="20" [ngSrc]="`https://img.shields.io/badge/Angular_${version.full}-blue`" alt="Current Angular Version" />
-      </div>
       <nw-header-details [lastUpdatedDate]="documentLastUpdatedDate()"
                          [displayElements]="displayElements"
                          [elementOrder]="elementOrder"
@@ -42,10 +38,16 @@
         <nw-tab id="tab-media" label="Media">
           <nw-document-settings-media />
         </nw-tab>
-        <nw-tab id="tab-export" label="Export">
-          <div style="display: flex; flex-direction: column; gap: 10px">
-            <nw-export-html />
-            <nw-export-markdown />
+        <nw-tab id="tab-history" label="History">
+          <nw-history [externalHistoryData]="historyList()"
+                     (saveVersion)="addHistoryVersion($event)"
+                     (removeVersion)="removeHistoryVersion($event)"
+                     (clearHistory)="clearHistoryVersions()" />
+        </nw-tab>
+        <nw-tab id="tab-demo" label="Demo">
+          <div>
+            <button class="modern-button" (click)="loadMockData()">Refresh Demo Data</button><br><br>
+            <img width="93" height="20" [ngSrc]="`https://img.shields.io/badge/Angular_${version.full}-blue`" alt="Current Angular Version" />
           </div>
         </nw-tab>
       </nw-tab-group>

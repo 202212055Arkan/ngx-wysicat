@@ -1,6 +1,7 @@
 export * from './configs/config.defaults';
 export * from './configs/config-provider';
 export * from './features/block-menu/block-menu.component';
+export * from './features/history/history.component';
 export * from './features/shareable/export-html/export-html.component';
 export * from './features/shareable/export-markdown/export-markdown.component';
 export * from './plugins/block-create/block-create-button/block-create-button.component';

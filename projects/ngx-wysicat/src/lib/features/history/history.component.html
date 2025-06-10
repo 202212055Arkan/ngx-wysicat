@@ -1,0 +1,62 @@
+<div class="history-container">
+  <span class="section-title">Document History</span>
+
+  <div class="history-controls">
+    <div class="feature-item">
+      <div class="feature-content">
+        <nw-svg-icon name="save" [primary]="true" />
+        <div>
+          <h4 class="feature-title">Auto-save</h4>
+          <div class="feature-description">
+            Automatically save document changes every 5 minutes
+          </div>
+        </div>
+      </div>
+      <nw-toggle-switch [enabled]="isAutoSaveEnabled()" (enabledChange)="toggleAutoSave($event)" />
+    </div>
+  </div>
+
+  <span class="section-title">Versions ({{ totalVersions() }})</span>
+
+  <div class="history-actions">
+    <button class="primary-button" (click)="saveCurrentVersion()">Save content</button>
+    <button class="secondary-button"
+            [disabled]="isClearing()"
+            (click)="onClearHistory()">
+      Clear history
+    </button>
+  </div>
+
+  <div class="history-list">
+    @for (version of historyVersions(); track version.id) {
+      <div class="history-item"
+           [class.active]="selectedVersion() === version.id"
+           [class.removing]="version.removing">
+        <div class="history-item-title">{{ version.changes }}</div>
+        <div class="history-item-details">
+          <div class="history-item-time">{{ version.title }}, {{ version.time }}</div>
+        </div>
+        <div class="history-item-actions">
+          <button class="action-button load-button" title="Load" (click)="applyVersion(version)">
+            <nw-svg-icon name="sync" [size]="14" />
+            <span>Apply</span>
+          </button>
+          <button class="action-button remove-button" title="Remove" (click)="onRemoveVersion(version.id)">
+            <nw-svg-icon name="remove" [size]="14" />
+            <span>Remove</span>
+          </button>
+        </div>
+      </div>
+    }
+    
+    <div class="no-history" [class.show]="showEmptyState()">
+      No history versions available
+    </div>
+
+    @if(historyVersions().length > 0) {
+      <div class="load-more-container">
+        <button class="load-more-button" (click)="loadMore()">Load more</button>
+      </div>
+    }
+  </div>
+</div>

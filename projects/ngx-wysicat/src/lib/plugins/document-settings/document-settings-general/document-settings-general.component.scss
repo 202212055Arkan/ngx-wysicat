@@ -84,6 +84,7 @@
   justify-content: space-between;
   padding: 8px 0;
   border-radius: 8px;
+  gap: 15px;
 }
 
 .feature-content {
@@ -103,4 +104,17 @@
   margin: 5px 0 0 0;
   font-size: 12px;
   color: var(--nw-color-primary-500);
+  font-family: var(--nw-font-family);
+  margin-bottom: 5px;
+}
+
+
+// TODO :)
+.export {
+  margin-top: 20px;
+
+  nw-export-html {
+    display: block;
+    margin-bottom: 10px;
+  }
 }
