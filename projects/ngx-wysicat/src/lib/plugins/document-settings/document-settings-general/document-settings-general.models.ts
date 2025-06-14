@@ -1,6 +1,5 @@
-import { FontConfig } from '../../../utils/fonts.service';
-
 import { DocumentSettings } from './document-settings-general.service';
+import { FontConfig } from './fonts.service';
 
 export type DocumentFeatureKey = keyof Pick<
   DocumentSettings,

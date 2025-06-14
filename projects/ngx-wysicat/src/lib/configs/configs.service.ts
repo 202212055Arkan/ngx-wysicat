@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { computed, effect, inject, Injectable, signal } from '@angular/core';
 
-import { FontsService } from '../utils/fonts.service';
+import { FontsService } from '../plugins/document-settings/document-settings-general/fonts.service';
 
 import { ConfigValidator } from './config.validator';
 import { NGX_RDE_CONFIG_TOKEN } from './config-token';
@@ -46,7 +46,10 @@ export class ConfigsService {
     return this.features();
   }
 
-  getFeatureFlag(flag: keyof FeatureFlags): boolean {
+  getFeatureFlag(flag: keyof FeatureFlags): boolean | any {
+    if (flag === 'imageResizor') {
+      return this.features()[flag].enabled;
+    }
     return this.features()[flag];
   }
 

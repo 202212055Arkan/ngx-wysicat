@@ -1,6 +1,6 @@
-import { RichDocumentEditorPlugin } from '../plugin-system';
+import { WysicatPlugin } from '../plugin-system';
 
-export interface BlockCreatePluginInterface extends RichDocumentEditorPlugin {
+export interface BlockCreatePluginInterface extends WysicatPlugin {
   createNewBlockHTMLElement(blockElement: HTMLElement): void;
 
   removeBlock?(blockElement: HTMLElement): void;

@@ -4,7 +4,7 @@ import Quill from 'quill';
 import { NGX_RDE_CONFIG_TOKEN } from '../configs/config-tokens';
 import { NgxRichDocumentEditorConfig } from '../configs/quill.config';
 
-export interface RichDocumentEditorPlugin {
+export interface WysicatPlugin {
   id: string;
   name: string;
 
@@ -17,11 +17,11 @@ export interface RichDocumentEditorPlugin {
   registerComponents?(): Type<unknown>[];
 }
 
-export type PluginProvider = Type<RichDocumentEditorPlugin> | RichDocumentEditorPlugin;
+export type PluginProvider = Type<WysicatPlugin> | WysicatPlugin;
 
 export const NGX_RDE_PLUGINS = new InjectionToken<PluginProvider[]>('NGX_RDE_PLUGINS');
 
-export type PluginFactory = () => Promise<RichDocumentEditorPlugin>;
+export type PluginFactory = () => Promise<WysicatPlugin>;
 
 export const NGX_RDE_PLUGIN_FACTORIES = new InjectionToken<PluginFactory[]>('NGX_RDE_PLUGIN_FACTORIES');
 
@@ -36,7 +36,7 @@ export function provideNgxRichDocumentEditorPlugins(plugins: PluginProvider[]): 
   providedIn: 'root',
 })
 export class PluginManagerService {
-  private plugins: Map<string, RichDocumentEditorPlugin> = new Map();
+  private plugins: Map<string, WysicatPlugin> = new Map();
   private quillInstance: Quill | null = null;
 
   constructor(
@@ -58,7 +58,7 @@ export class PluginManagerService {
     }
   }
 
-  registerPlugin<T extends RichDocumentEditorPlugin>(plugin: T): void {
+  registerPlugin<T extends WysicatPlugin>(plugin: T): void {
     if (this.plugins.has(plugin.id)) {
       console.warn(`Plugin with id "${plugin.id}" is already registered. Skipping.`);
       return;
@@ -177,6 +177,17 @@ export class PluginManagerService {
         });
     }
 
+    if (this.config?.features?.imageResizor?.enabled) {
+      import('../plugins/image-resizor/image-resizor.plugin')
+        .then((file) => {
+          const plugin = this.injector.get(file.ImageResizorPlugin);
+          this.registerPlugin(plugin);
+        })
+        .catch((error) => {
+          console.error('Failed to load image resizor plugin:', error);
+        });
+    }
+
     import('../plugins/words-counter/words-counter.plugin')
       .then((file) => {
         const plugin = this.injector.get(file.WordsCounterPlugin);
@@ -202,7 +213,7 @@ export class PluginManagerService {
     });
   }
 
-  private initializePlugin<T extends RichDocumentEditorPlugin>(plugin: T): void {
+  private initializePlugin<T extends WysicatPlugin>(plugin: T): void {
     if (!this.quillInstance) {
       return;
     }

@@ -1,10 +1,12 @@
+import { DEFAULT_IMAGE_RESIZOR_CONFIG } from '../plugins/image-resizor';
+
 import { NgxRichDocumentEditorConfig } from './quill.config';
 
 export const DEFAULT_CONFIG: NgxRichDocumentEditorConfig = {
   features: {
     blockDuplication: true,
     blockRemoval: true,
-    blockMenu:true,
+    blockMenu: true,
     blockSettings: true,
     textToolbar: true,
     wordsCounter: true,
@@ -13,6 +15,10 @@ export const DEFAULT_CONFIG: NgxRichDocumentEditorConfig = {
     blockDragAndDrop: true,
     initialTemplate: true,
     documentSettings: true,
+    imageResizor: {
+      enabled: true,
+      options: DEFAULT_IMAGE_RESIZOR_CONFIG,
+    },
   },
   api: {
     baseUrl: 'http://localhost:3000',

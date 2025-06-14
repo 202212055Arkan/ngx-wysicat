@@ -17,6 +17,10 @@ export interface FeatureFlags {
   emojis: boolean;
   initialTemplate: boolean;
   documentSettings: boolean;
+  imageResizor: {
+    enabled: boolean;
+    options?: any;
+  };
 }
 
 export interface ApiConfig {

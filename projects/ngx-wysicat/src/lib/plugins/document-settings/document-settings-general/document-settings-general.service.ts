@@ -2,10 +2,10 @@ import { computed, effect, inject, Injectable, signal } from '@angular/core';
 
 import { ConfigsService } from '../../../configs/configs.service';
 import { QuillStore } from '../../../store';
-import { FontsService } from '../../../utils/fonts.service';
 
 import { DOCUMENT_FEATURES, DOCUMENT_SETTINGS_KEYS, RANGE_CONTROLS } from './document-settings-general.configs';
 import { DocumentSettingsGeneralModels, FeatureDocumentSettingsKeys, RangeDocumentSettingsKeys } from './document-settings-general.models';
+import { FontsService } from './fonts.service';
 
 export interface DocumentSettings {
   readonly selectedFontType: string;

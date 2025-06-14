@@ -1,14 +1,14 @@
 import { inject, Injectable } from '@angular/core';
 import Quill from 'quill';
 
-import { RichDocumentEditorPlugin } from '../plugin-system';
+import { WysicatPlugin } from '../plugin-system';
 
 import { WordsCounterService } from './words-counter.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class WordsCounterPlugin implements RichDocumentEditorPlugin {
+export class WordsCounterPlugin implements WysicatPlugin {
   id = 'wordsCounter';
   name = 'Words Counter Plugin';
 

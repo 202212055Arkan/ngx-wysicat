@@ -77,7 +77,6 @@ export class QuillCreatorService {
     Quill.register('modules/placeholder', PlaceholderModule);
     Quill.register('formats/tweet', TweetBlot);
     Quill.register('formats/linkedin', LinkedinBlot);
-
     Quill.register('formats/link', CustomLink, true);
   }
 
@@ -113,6 +112,7 @@ export class QuillCreatorService {
         theme: 'custom-bubble',
         bounds: rootElement,
         formats: [
+          'image',
           'linkedin',
           'tweet',
           'blockId',

@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { inject, Injectable } from '@angular/core';
 
-import { NGX_RDE_CONFIG_TOKEN } from '../configs/config-tokens';
+import { NGX_RDE_CONFIG_TOKEN } from '../../../configs/config-tokens';
 
 export type FontType = 'sans' | 'serif' | 'mono';
 
