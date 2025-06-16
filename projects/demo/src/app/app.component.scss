@@ -2,7 +2,6 @@
   display: flex;
 }
 
-
 .dc {
   $toolbar-animation-duration: 0.2s;
   height: 100%;
@@ -58,4 +57,9 @@
       background: linear-gradient(135deg, #1c8f4e 0%, #3dbd83 100%);
     }
   }
+}
+.demo-btn-container {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
 }

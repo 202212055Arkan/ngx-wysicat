@@ -1,5 +1,5 @@
-import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, signal, VERSION, WritableSignal } from '@angular/core';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal, VERSION, WritableSignal } from '@angular/core';
 import {
   BlockCreateButtonComponent,
   BlockMenuComponent,
@@ -27,7 +27,8 @@ import {
 } from 'ngx-wysicat';
 
 import { formatHistoryData } from './history-formatter';
-import { MOCK_DATA } from './mock-data';
+import { MOCK_DATA_CONFIGURATION_MAP, MOCK_DATA_MAP, MOCK_DATA_TYPE } from './mock-data';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -51,14 +52,19 @@ import { MOCK_DATA } from './mock-data';
     DocumentSettingsGeneralComponent,
     NgOptimizedImage,
     HistoryComponent,
+    FormsModule,
+    CommonModule,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   data: WritableSignal<EditorDataModel[]> = signal([]);
   version = VERSION;
   historyList = signal<HistoryVersion[]>(formatHistoryData());
+
+  mockDataType: string[] = ['Random Data', 'Technical Data', 'Marketing Data', 'Business Data'];
+  selectedMockDataType: MOCK_DATA_TYPE = MOCK_DATA_TYPE.RANDOM_DATA;
 
   authorData: HeaderAuthorModel = {
     name: 'Sir Meowsalot',
@@ -94,6 +100,11 @@ export class AppComponent {
     this.loadData();
   }
 
+  ngOnInit(): void {
+    const storedValue = parseInt(JSON.parse(localStorage.getItem('rde_mockDataType') ?? '0'));
+    this.selectedMockDataType = storedValue;
+  }
+
   onEditorDataChanged(editorData: EditorDataModel[]) {
     localStorage.setItem('ql_editorData', JSON.stringify(editorData));
     this.documentLastUpdatedDate.set(new Date());
@@ -114,6 +125,12 @@ export class AppComponent {
     this.richDocumentService.setReadOnly(value);
   }
 
+  handleMockDataChange(): void {
+    if (this.selectedMockDataType) {
+      this.loadMockData();
+    }
+  }
+
   toggleAddToFavourite() {}
 
   addHistoryVersion(version: HistoryVersion) {
@@ -129,32 +146,14 @@ export class AppComponent {
   }
 
   loadMockData() {
-    this.data.set([...MOCK_DATA]);
+    this.data.set(MOCK_DATA_MAP[this.selectedMockDataType]);
+    localStorage.setItem('rde_mockDataType', JSON.stringify(this.selectedMockDataType));
     this.applyDemoSettings();
   }
 
   applyDemoSettings(): void {
-    const demoSettings = {
-      selectedFontType: 'sans',
-      fontSize: 1,
-      maxWidthPercent: 0.94,
-      lineSpacingMultiplier: 6.7,
-      readOnly: false,
-      topToolbar: true,
-      selectionToolbar: true,
-      header: true,
-      emoji: true,
-      createBlock: true,
-      blockDragAndDrop: true,
-      blockDuplication: true,
-      blockRemoval: true,
-      blockOperationsMenu: true,
-      textToolbar: true,
-      wordsCounter: true,
-      blockSettings: true,
-    };
-
-    localStorage.setItem('rde_documentSettings', JSON.stringify(demoSettings));
+    const configurationToBeLoad = MOCK_DATA_CONFIGURATION_MAP[this.selectedMockDataType];
+    localStorage.setItem('rde_documentSettings', JSON.stringify(configurationToBeLoad));
     window.location.reload();
   }
 }
