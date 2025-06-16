@@ -1,12 +1,12 @@
 <div align="center">
   <img src="assets/logo.png" alt="ngx-wysicat" width="250">
   <h1>ngx-wysicat</h1>
-  <p><b>A flexible, feature-rich document editor for Angular.</b></p>
+  <p><b>A simple yet powerful document editor for Angular.</b></p>
   <p>
-    Build beautiful, structured documents with ease. ngx-wysicat combines block-based editing, advanced formatting, and a flexible plugin system—all powered by Quill.js. Perfect for collaborative apps, note-taking tools, or any project where content quality matters.
+    Create beautiful documents easily. ngx-wysicat uses blocks for content, offers many formatting options, and works with plugins—all built on Quill.js. Perfect for team apps, note-taking, or any project that needs good-looking content.
   </p>
   <p>
-    Designed for clarity, speed, and a seamless writing experience. Make your documents stand out and your users feel at home.
+    Built for clear, fast, and smooth writing. Help your users create great documents.
   </p>
   <p>
     <a href="https://app.netlify.com/sites/test-quill-appx/deploys"><img src="https://api.netlify.com/api/v1/badges/ce859423-fb65-4ae9-82c4-d0ad1e24982e/deploy-status" alt="Demo Status"></a>
@@ -16,32 +16,39 @@
   </p>
 </div>
 
-> **!! Contributions are welcome!** If you find an issue or have an idea for improvement, please feel free to create a pull request or open an issue. We appreciate your help in making this project better!
+> **!! Contributions are welcome!** This project is in an early stage where we're adding new features and exploring ideas. Later, we'll split features into plugins to make everything cleaner. If you find bugs or have ideas to make it better, please open an issue or send a pull request. We appreciate your help!
 
 ## 🐾 Features
 
-- **Block-Based Editing** - Create and manipulate content blocks with an intuitive interface
-- **Document Header System** - Personalize with author information and metadata
-- **Document Settings Panel** - Fine-tune your document with powerful configuration options
-- **Floating Menu Options** - Quick access to document and block operations
-- **Word Count & Reading Time** - Track document metrics automatically
-- **Rich Text Formatting** - Express yourself with comprehensive styling options
+- **Block-Based Editing** - Create and move content blocks easily
+- **Document Header** - Add author info and other details
+- **Settings Panel** - Change how your document looks and works
+- **Floating Menus** - Quick access to tools
+- **Word Count & Reading Time** - See how long your document is
+- **Rich Text Formatting** - Add styles to your text
+- **Image Resizing** - Change image size right in the editor
+- **Social Media Embeds** - Add LinkedIn and Twitter posts
+- **Enhanced Links** - See link previews when hovering
 
-### Plugin System
+### Coming Soon
 
-ngx-wysicat comes with a robust plugin architecture that includes:
+- **YouTube Videos** - Add videos directly in your documents
+- **Better People Mentions** - Improved way to tag people
+- **Better Link Displays** - More attractive link previews
 
-- **Text Toolbar** - Comprehensive text formatting with color selection, headings, lists, links, and more
-- **Block Creation** - Add various content blocks to your document
-- **Block Menu** - Manage and navigate between blocks
-- **Block Settings** - Configure individual block properties
-- **Document Settings** - Control document-wide configurations
-- **Drag and Drop** - Reorder blocks with intuitive drag and drop
-- **Emojis** - Insert and manage emoji characters
-- **Initial Template** - Starter templates for new documents
-- **Words Counter** - Track word count and reading time statistics
+### Plugins
 
-## 🐱 Installation
+- **Text Toolbar** - Format text with colors, headings, lists, links, and more
+- **Block Creation** - Add different types of content blocks
+- **Block Menu** - Manage your content blocks
+- **Block Settings** - Change how blocks look and work
+- **Document Settings** - Control overall document settings
+- **Drag and Drop** - Move blocks by dragging them
+- **Emojis** - Add emoji characters
+- **Initial Template** - Start with ready-made templates
+- **Words Counter** - Track word count and reading time
+
+## 🐈 Installation
 
 ```bash
 pnpm add ngx-wysicat
@@ -50,39 +57,43 @@ pnpm add ngx-wysicat
 ## 🐈 Basic Usage
 
 ```typescript
-import { provideNgxWysicatConfig } from 'ngx-wysicat';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { provideNgxRichDocument } from 'ngx-wysicat';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideNgxWysicatConfig({
-      features: {
-        emojis: true,
-        blockDragAndDrop: true,
-        textToolbar: true,
-        wordsCounter: true
+    provideZoneChangeDetection({
+      eventCoalescing: true,
+    }),
+    provideNgxRichDocument(
+      {
+        features: {
+          createBlock: true,
+        },
+        ui: {
+          fonts: {
+            sans: 'Inter',
+            serif: 'Playfair Display',
+            mono: 'JetBrains Mono',
+          },
+        },
       },
-      ui: {
-        theme: 'light',
-        fonts: {
-          sans: 'Arial',
-          serif: 'Times New Roman',
-          mono: 'Courier New'
-        }
-      }
-    })
+      [], // no custom plugins
+    ),
   ],
 };
 ```
 
 ```html
-<nw-root [editorData]="data" (editorDataChanged)="onEditorDataChanged($event)">
+<nw-root [editorData]="data()" (editorDataChanged)="onEditorDataChanged($event)">
   <nw-header header>
     <nw-header-author author [authorData]="authorData" />
     <div details class="header__right-content">
       <nw-header-details [lastUpdatedDate]="documentLastUpdatedDate()"
-                          [displayElements]="displayElements"
-                          [elementOrder]="elementOrder"
-                          [elementConfigs]="elementConfigs" />
+                         [displayElements]="displayElements"
+                         [elementOrder]="elementOrder"
+                         [elementConfigs]="elementConfigs">
+      </nw-header-details>
       <div class="vertical-divider vertical-divider--big"></div>
       <nw-document-settings-menu position="horizontal">
         <nw-favorite-button (favoriteToggle)="toggleAddToFavourite()" />
@@ -92,27 +103,47 @@ export const appConfig: ApplicationConfig = {
     </div>
   </nw-header>
 
-  <nw-block-menu blockMenu>
-    <nw-block-create-button />
-    <nw-block-settings />
-  </nw-block-menu>
+  <nw-document-settings-menu floatingMenu position="vertical">
+    <nw-favorite-button (favoriteToggle)="toggleAddToFavourite()" />
+    <nw-read-only-button [isReadOnly]="isReadOnly()" (clicked)="setReadOnly($event)" />
+    <nw-settings-button (settingsToggle)="toggleSidebar()" />
+  </nw-document-settings-menu>
+
+  @if (!isReadOnly()) {
+    <nw-block-menu blockMenu>
+      <nw-block-create-button />
+      <nw-block-settings />
+    </nw-block-menu>
+  }
+
+  <div class="dc" documentSettings [class.closed]="!documentSettingsOpened()">
+    <nw-document-settings>
+      <nw-tab-group>
+        <nw-tab id="tab-general" label="General">
+          <nw-document-settings-general />
+        </nw-tab>
+        <nw-tab id="tab-media" label="Media">
+          <nw-document-settings-media />
+        </nw-tab>
+        <nw-tab id="tab-history" label="History">
+          <nw-history [externalHistoryData]="historyList()"
+                     (saveVersion)="addHistoryVersion($event)"
+                     (removeVersion)="removeHistoryVersion($event)"
+                     (clearHistory)="clearHistoryVersions()" />
+        </nw-tab>
+      </nw-tab-group>
+    </nw-document-settings>
+  </div>
 </nw-root>
 ```
 
-## 🐈‍⬛ Component API
-
-### Core Components
-- `WysicatRootComponent` - The main container that brings everything together
-- `HeaderComponent` - Sleek document header with customizable sections
-- `BlockMenuComponent` - Intuitive interface for block manipulation
-
-### Plugin System
+## 🐈‍⬛ Creating Custom Plugins
 
 ```typescript
 @Injectable({ providedIn: 'root' })
 export class MyCustomPlugin implements WysicatPlugin {
-  id = 'my-plugin';
-  name = 'My Plugin';
+  readonly id = 'my-plugin';
+  readonly name = 'My Plugin';
   
   private quill: Quill | null = null;
   private textChangeHandler: (() => void) | null = null;
@@ -139,35 +170,45 @@ export class MyCustomPlugin implements WysicatPlugin {
 
 ## 🐅 Development
 
-Here are the main commands for working on this project:
+Here are the main commands you can use:
 
 ```bash
-# Start the demo app
-pnpm start
-
-# Build the demo app
-pnpm build:demo
+# Start the demo app locally
+nx serve demo
 
 # Build the library
-pnpm build:lib
+nx build ngx-wysicat
 
-# Cleanup, reset Nx, and reinstall dependencies
-pnpm cleanup
+# Build the library in development mode
+nx build ngx-wysicat --configuration=development
+
+# Build the demo app
+nx build demo
+
+# Analyze the demo app bundle
+nx analyze-bundle demo
 
 # Check for circular dependencies
-pnpm check-circular-deps
+nx madge-deps ngx-wysicat
 
-# Analyze the library
-pnpm analyze:lib
+# Reset dependencies, Nx cache, and reinstall
+pnpm reset-deps
 
-# Analyze the demo bundle
-pnpm analyze:demo
+# Lint the library
+nx lint ngx-wysicat
+```
 
-# Build demo with stats
-pnpm build:analyze-demo
+### Project Structure
 
-# Visualize build stats
-pnpm display:analyze-demo
+- `projects/ngx-wysicat` - Main library code
+- `projects/demo` - Demo app showing library features
+- `projects/landing-page` - Project landing page
 
-# Lint the codebase
-pnpm lint
+### Getting Started for New Developers
+
+1. Clone the repository
+2. Install dependencies with `pnpm reset-deps`
+3. Start the demo app with `nx serve demo`
+4. Go to `http://localhost:4200` to see the editor working
+
+The demo app lets you test and explore all ngx-wysicat features.
