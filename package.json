@@ -3,8 +3,6 @@
   "version": "0.0.0",
   "scripts": {
     "reset-deps": "node scripts/reset-deps.js && nx reset && pnpm install",
-    "build:analyze-demo": "nx build demo --stats-json --named-chunks",
-    "display:analyze-demo": "npx esbuild-visualizer --metadata=dist/demo/stats.json --open=true",
     "prepare": "husky"
   },
   "dependencies": {
