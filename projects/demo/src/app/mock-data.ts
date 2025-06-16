@@ -59,7 +59,7 @@ export const MOCK_DATA = [
     "insert": "\n",
   },
   {
-    "insert": { linkedin: "https://www.linkedin.com/embed/feed/update/urn:li:share:7337509682770554881?collapsed=1"},
+    "insert": { linkedin: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7339169748015869952?collapsed=1"},
   },
   {
     "insert": "\n",

@@ -91,32 +91,15 @@
       "defaultConfiguration": "development",
       "continuous": true
     },
-    "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n"
-    },
-    "test": {
-      "executor": "@angular-devkit/build-angular:karma",
+    "analyze-bundle": {
+      "executor": "nx:run-commands",
       "options": {
-        "polyfills": [
-          "zone.js",
-          "zone.js/testing"
+        "commands": [
+          "nx build demo --stats-json --named-chunks",
+          "npx esbuild-visualizer --metadata=dist/demo/stats.json --open=true"
         ],
-        "tsConfig": "projects/demo/tsconfig.spec.json",
-        "inlineStyleLanguage": "scss",
-        "assets": [
-          {
-            "glob": "**/*",
-            "input": "projects/demo/public"
-          }
-        ],
-        "styles": [
-          "projects/demo/src/styles.scss"
-        ],
-        "scripts": []
+        "parallel": false
       }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint"
     }
   }
 }

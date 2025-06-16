@@ -58,24 +58,24 @@ export class HistoryComponent {
 
   onRemoveVersion(versionId: string): void {
     // Mark the item as removing to trigger the animation
-    this.historyVersions.update(versions => 
-      versions.map(v => v.id === versionId ? { ...v, removing: true } : v)
+    this.historyVersions.update((versions) =>
+      versions.map((v) => v.id === versionId ? { ...v, removing: true } : v),
     );
-    
+
     // Wait for animation to complete before actually removing the item
     setTimeout(() => {
       // Update the history versions list to remove the item
-      this.historyVersions.update(versions => {
-        const filtered = versions.filter(v => v.id !== versionId);
+      this.historyVersions.update((versions) => {
+        const filtered = versions.filter((v) => v.id !== versionId);
         if (filtered.length === 0) {
           setTimeout(() => this.showEmptyState.set(true), 100);
         }
         return filtered;
       });
-      
+
       // Only emit the removal event after animation completes
       this.removeVersion.emit(versionId);
-      
+
       // Update selected version if needed
       if (this.selectedVersion() === versionId) {
         this.selectedVersion.set('current');
@@ -87,32 +87,32 @@ export class HistoryComponent {
     if (this.historyVersions().length === 0) {
       return;
     }
-    
+
     // Hide empty state message during clearing
     this.showEmptyState.set(false);
-    
+
     // Set clearing flag to true
     this.isClearing.set(true);
-    
+
     // Mark all items as removing to trigger the animation
-    this.historyVersions.update(versions => 
-      versions.map(v => ({ ...v, removing: true }))
+    this.historyVersions.update((versions) =>
+      versions.map((v) => ({ ...v, removing: true })),
     );
-    
+
     // Wait for animation to complete before actually clearing
     setTimeout(() => {
       // Clear the history versions
       this.historyVersions.set([]);
-      
+
       // Emit the clear event
       this.clearHistory.emit();
-      
+
       // Reset the selected version
       this.selectedVersion.set('current');
-      
+
       // Reset the clearing flag
       this.isClearing.set(false);
-      
+
       // Show empty state message with a delay
       setTimeout(() => {
         this.showEmptyState.set(true);
@@ -132,7 +132,7 @@ export class HistoryComponent {
     if (currentContent) {
       // Hide empty state when adding a new version
       this.showEmptyState.set(false);
-      
+
       const newVersion: HistoryVersion = {
         id: `v${Date.now()}`,
         title: 'Manual save',
@@ -148,8 +148,10 @@ export class HistoryComponent {
 
   private formatCurrentTime(): string {
     const now = new Date();
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const hours = now.getHours().toString()
+.padStart(2, '0');
+    const minutes = now.getMinutes().toString()
+.padStart(2, '0');
     return `Today, ${hours}:${minutes}`;
   }
 }
