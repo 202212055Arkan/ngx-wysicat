@@ -35,7 +35,7 @@ export class DocumentSettingsGeneralComponent {
   toggleFeature(name: string, enabled: boolean): void {
     this.documentSettingsGeneralService.toggleFeature(name, enabled);
   }
-  
+
   getFeatureDescription(key: string): string {
     const descriptions: Record<string, string> = {
       [DOCUMENT_SETTINGS_KEYS.READ_ONLY]: 'Prevents editing of document content while still allowing navigation',
@@ -52,7 +52,7 @@ export class DocumentSettingsGeneralComponent {
       [DOCUMENT_SETTINGS_KEYS.WORDS_COUNTER]: 'Shows word count statistics',
       [DOCUMENT_SETTINGS_KEYS.BLOCK_SETTINGS]: 'Allows configuring individual block settings',
     };
-    
+
     return descriptions[key] || '';
   }
 }

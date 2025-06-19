@@ -48,7 +48,10 @@ Thumbs.db
 # AI
 .windsurfrules
 .cursorrules
-
-.angular
 .cursor/rules/nx-rules.mdc
+
+# Angular
+.angular
+
+# GitHub
 .github/instructions/nx.instructions.md

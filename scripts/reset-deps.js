@@ -8,6 +8,7 @@ const foldersToRemove = [
   '.idea',
   '.angular',
   'pnpm-lock.yaml',
+  'stats.html',
 ];
 
 foldersToRemove.forEach((folder) => {

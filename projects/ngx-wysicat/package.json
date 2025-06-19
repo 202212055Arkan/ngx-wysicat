@@ -1,6 +1,6 @@
 {
   "name": "ngx-wysicat",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "sideEffects": false,
   "peerDependencies": {
     "@angular/common": "^19.2.10",

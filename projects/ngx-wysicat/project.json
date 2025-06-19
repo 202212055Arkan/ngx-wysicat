@@ -30,16 +30,19 @@
           "npx source-map-explorer dist/ngx-wysicat/fesm2022/ngx-wysicat.mjs"
         ],
         "cwd": "."
-      },
-      "dependsOn": [
-        {
-          "target": "build",
-          "projects": "self"
-        }
-      ]
+      }
     },
     "lint": {
       "executor": "@nx/eslint:lint"
+    },
+    "madge-deps": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npx madge --circular --extensions ts ./projects/ngx-wysicat"
+        ],
+        "cwd": "."
+      }
     }
   }
 }

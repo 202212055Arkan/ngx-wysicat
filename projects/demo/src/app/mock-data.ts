@@ -60,8 +60,17 @@ export const MOCK_DATA = [
     insert: '\n',
   },
   {
-    insert: {
-      divider: true,
+    "insert": { linkedin: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7339169748015869952?collapsed=1"},
+  },
+  {
+    "insert": "\n",
+  },
+  {
+    insert: { tweet: "https://x.com/quilljs/status/464454167226904576"},
+  },
+  {
+    "insert": {
+      "divider": true,
     },
   },
   {

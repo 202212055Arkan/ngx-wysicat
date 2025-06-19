@@ -44,6 +44,8 @@ export class QuillStore {
   saveContent(): void {
     const quill = this.quill();
 
+
+
     if (!quill) {
       return;
     }
