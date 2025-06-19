@@ -1,4 +1,4 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, OnInit, signal, VERSION, WritableSignal } from '@angular/core';
 import {
   BlockCreateButtonComponent,
@@ -53,12 +53,11 @@ import { FormsModule } from '@angular/forms';
     NgOptimizedImage,
     HistoryComponent,
     FormsModule,
-    CommonModule,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   data: WritableSignal<EditorDataModel[]> = signal([]);
   version = VERSION;
   historyList = signal<HistoryVersion[]>(formatHistoryData());
@@ -100,11 +99,6 @@ export class AppComponent implements OnInit {
     this.loadData();
   }
 
-  ngOnInit(): void {
-    const storedValue = parseInt(JSON.parse(localStorage.getItem('rde_mockDataType') ?? '0'));
-    this.selectedMockDataType = storedValue;
-  }
-
   onEditorDataChanged(editorData: EditorDataModel[]) {
     localStorage.setItem('ql_editorData', JSON.stringify(editorData));
     this.documentLastUpdatedDate.set(new Date());
@@ -125,10 +119,8 @@ export class AppComponent implements OnInit {
     this.richDocumentService.setReadOnly(value);
   }
 
-  handleMockDataChange(): void {
-    if (this.selectedMockDataType) {
-      this.loadMockData();
-    }
+  handleMockDataChange(selectedMockDataType: MOCK_DATA_TYPE): void {
+    this.loadMockData(selectedMockDataType);
   }
 
   toggleAddToFavourite() {}
@@ -145,14 +137,14 @@ export class AppComponent implements OnInit {
     this.historyList.set([]);
   }
 
-  loadMockData() {
-    this.data.set(MOCK_DATA_MAP[this.selectedMockDataType]);
-    localStorage.setItem('rde_mockDataType', JSON.stringify(this.selectedMockDataType));
-    this.applyDemoSettings();
+  loadMockData(selectedMockDataType: MOCK_DATA_TYPE) {
+    this.data.set(MOCK_DATA_MAP[selectedMockDataType]);
+    localStorage.setItem('rde_mockDataType', JSON.stringify(selectedMockDataType));
+    this.applyDemoSettings(selectedMockDataType);
   }
 
-  applyDemoSettings(): void {
-    const configurationToBeLoad = MOCK_DATA_CONFIGURATION_MAP[this.selectedMockDataType];
+  applyDemoSettings(selectedMockDataType: MOCK_DATA_TYPE): void {
+    const configurationToBeLoad = MOCK_DATA_CONFIGURATION_MAP[selectedMockDataType];
     localStorage.setItem('rde_documentSettings', JSON.stringify(configurationToBeLoad));
     window.location.reload();
   }

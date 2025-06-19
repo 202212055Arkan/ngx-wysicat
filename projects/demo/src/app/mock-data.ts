@@ -1162,7 +1162,7 @@ const BUSINESS_DATA = [
   { insert: 'Total Investment: $100,000', attributes: { bold: true, size: 'huge', color: '#27ae60' } },
   { insert: '\n\n' },
   { insert: 'For more information, contact us at: ' },
-  { insert: 'marketing@company.com', attributes: { link: 'mailto:marketing@company.com', underline: true } },
+  { insert: 'marketing@company.com', underline: true },
   { insert: '\n' },
 ];
 const TECHNICAL_DATA = [
@@ -1313,7 +1313,7 @@ const MARKETING_DATA = [
   { insert: '20% early bird discount', attributes: { bold: true, color: '#e74c3c', size: 'large' } },
   { insert: '!\n\n' },
   { insert: 'Ready to supercharge your marketing? ' },
-  { insert: 'Contact our team', attributes: { link: 'mailto:team@marketing.com', underline: true, color: '#3498db' } },
+  { insert: 'Contact our team : team@marketing.com' },
   { insert: ' for a free consultation!\n\n' },
   { insert: 'Best regards,\nThe Marketing Team 📈', attributes: { align: 'center', italic: true } },
   { insert: '\n' },

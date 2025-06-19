@@ -40,12 +40,9 @@
         <nw-tab id="tab-demo" label="Demo">
           <img width="93" height="20" [ngSrc]="`https://img.shields.io/badge/Angular_${version.full}-blue`" alt="Current Angular Version" />
           <div class="demo-btn-container">
-            <div>
-              <select name="mock-data-dropdown" id="mock-data-dropdown" [(ngModel)]="selectedMockDataType">
-                <option *ngFor="let item of mockDataType; let i = index" [value]="i">{{ item }}</option>
-              </select>
-            </div>
-            <button class="modern-button" (click)="handleMockDataChange()">Select Demo Data</button>
+            @for (item of mockDataType; track item; let i = $index) {
+              <button class="modern-button" (click)="handleMockDataChange(i)">Select {{ item }}</button>
+            }
           </div>
         </nw-tab>
       </nw-tab-group>
