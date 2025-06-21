@@ -60,17 +60,20 @@ export const MOCK_DATA = [
     insert: '\n',
   },
   {
-    "insert": { linkedin: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7339169748015869952?collapsed=1"},
+    insert: {
+      linkedin:
+        'https://www.linkedin.com/embed/feed/update/urn:li:activity:7339169748015869952?collapsed=1',
+    },
   },
   {
-    "insert": "\n",
+    insert: '\n',
   },
   {
-    insert: { tweet: "https://x.com/quilljs/status/464454167226904576"},
+    insert: { tweet: 'https://x.com/quilljs/status/464454167226904576' },
   },
   {
-    "insert": {
-      "divider": true,
+    insert: {
+      divider: true,
     },
   },
   {
@@ -140,7 +143,8 @@ export const MOCK_DATA = [
     attributes: {
       color: '#2e2e2e',
     },
-    insert: '. She’s a ninja with fur. Once, she launched herself across the room just to catch a fly. It got away. She blamed the couch. Chaos followed.',
+    insert:
+      '. She’s a ninja with fur. Once, she launched herself across the room just to catch a fly. It got away. She blamed the couch. Chaos followed.',
   },
   {
     insert: '\n',
@@ -162,7 +166,8 @@ export const MOCK_DATA = [
     attributes: {
       color: '#2e2e2e',
     },
-    insert: ' for 10 minutes. Nothing there. We checked. Is she seeing ghosts? No idea. But now the whole family avoids that corner too.',
+    insert:
+      ' for 10 minutes. Nothing there. We checked. Is she seeing ghosts? No idea. But now the whole family avoids that corner too.',
   },
   {
     insert: '\n',
@@ -197,7 +202,8 @@ export const MOCK_DATA = [
     attributes: {
       color: '#2e2e2e',
     },
-    insert: '. She sits on your chest and purrs like a tiny motor. Cute? Yes. Terrifying at 3am? Also yes.',
+    insert:
+      '. She sits on your chest and purrs like a tiny motor. Cute? Yes. Terrifying at 3am? Also yes.',
   },
   {
     insert: '\n',
@@ -208,7 +214,8 @@ export const MOCK_DATA = [
       color: '#2e2e2e',
       italic: true,
     },
-    insert: '"If your cat is purring, they are either happy... or trying to brainwash you for snacks."',
+    insert:
+      '"If your cat is purring, they are either happy... or trying to brainwash you for snacks."',
   },
   {
     attributes: {
@@ -394,7 +401,8 @@ export const MOCK_DATA = [
     attributes: {
       color: '#2e2e2e',
     },
-    insert: '. For hours. They wait. They know. Red Dot will return. They are ready. Every paw twitch, every tail flick, is part of the training.',
+    insert:
+      '. For hours. They wait. They know. Red Dot will return. They are ready. Every paw twitch, every tail flick, is part of the training.',
   },
   {
     insert: '\n',
@@ -612,7 +620,8 @@ export const MOCK_DATA = [
       background: 'oklch(0.971 0.014 343.198)',
       italic: true,
     },
-    insert: '"A cat in a garden is like royalty in their kingdom — slightly confused but always confident."',
+    insert:
+      '"A cat in a garden is like royalty in their kingdom — slightly confused but always confident."',
   },
   {
     attributes: {
@@ -785,7 +794,8 @@ export const MOCK_DATA = [
     attributes: {
       color: '#2e2e2e',
     },
-    insert: '3:00 AM. Silence. Then: *thunder paws*. Sprinting. Jumping. A flip off the couch. It was time for the ',
+    insert:
+      '3:00 AM. Silence. Then: *thunder paws*. Sprinting. Jumping. A flip off the couch. It was time for the ',
   },
   {
     attributes: {
@@ -815,7 +825,8 @@ export const MOCK_DATA = [
     attributes: {
       color: '#2e2e2e',
     },
-    insert: ' and mysterious acrobatics. Somehow, the cat ends up on the fridge. No one knows how.',
+    insert:
+      ' and mysterious acrobatics. Somehow, the cat ends up on the fridge. No one knows how.',
   },
   {
     insert: '\n',
@@ -910,7 +921,8 @@ export const MOCK_DATA = [
     attributes: {
       color: '#2e2e2e',
     },
-    insert: '. The dog had his bed. The human had a couch. But the box... the box had soul.',
+    insert:
+      '. The dog had his bed. The human had a couch. But the box... the box had soul.',
   },
   {
     insert: '\n',
@@ -1127,67 +1139,207 @@ export const MOCK_DATA = [
 ];
 
 const BUSINESS_DATA = [
-  { insert: 'BUSINESS PROPOSAL', attributes: { header: 1, align: 'center' } },
-  { insert: '\n\n' },
-  { insert: 'Revolutionizing Digital Marketing Solutions', attributes: { header: 2, color: '#667eea' } },
-  { insert: '\n\n' },
-  { insert: 'Executive Summary', attributes: { header: 3, bold: true } },
-  { insert: '\n\nThis proposal outlines a ' },
-  { insert: 'comprehensive digital marketing strategy', attributes: { bold: true, color: '#e74c3c' } },
-  { insert: ' designed to increase brand visibility, drive customer engagement, and boost revenue by ' },
-  { insert: '35% within the first quarter', attributes: { background: '#fff3cd', bold: true } },
-  { insert: '.\n\n' },
-  { insert: 'Key Objectives:', attributes: { header: 4 } },
+  {
+    insert: '🚀 Spotlight: Google’s Digital Marketing Toolbox',
+    attributes: { header: 2, color: '#4285f4' },
+  },
   { insert: '\n' },
-  { insert: 'Increase social media engagement by 150%' },
-  { insert: '\n', attributes: { list: 'ordered' } },
-  { insert: 'Launch targeted advertising campaigns across 5 platforms' },
-  { insert: '\n', attributes: { list: 'ordered' } },
-  { insert: 'Implement advanced analytics and tracking systems' },
-  { insert: '\n', attributes: { list: 'ordered' } },
-  { insert: 'Develop content marketing strategy with weekly blog posts' },
-  { insert: '\n', attributes: { list: 'ordered' } },
+  {
+    insert: 'Explore the latest strategies, tools & consumer insights at ',
+  },
+  {
+    insert: 'Think with Google',
+    attributes: { bold: true, color: '#0f9d58' },
+  },
+  {
+    insert: ' — the go-to platform for marketing leaders.\n\n',
+  },
+  {
+    insert: '💼 BUSINESS PROPOSAL',
+    attributes: { header: 1, align: 'center', color: '#2c3e50' },
+  },
   { insert: '\n' },
-  { insert: 'Market Analysis', attributes: { header: 3, bold: true } },
-  { insert: '\n\n' },
-  { insert: 'Current market trends indicate a significant shift towards digital-first strategies. Our analysis shows:', attributes: { italic: true } },
-  { insert: '\n\n' },
+  {
+    insert: 'Reimagining the Future of Digital Marketing',
+    attributes: { header: 2, color: '#8e44ad' },
+  },
+  { insert: '\n' },
+  {
+    insert: 'Executive Summary',
+    attributes: { header: 3, bold: true, italic: true },
+  },
+  { insert: '\n' },
   {
     insert:
-      'The digital marketing industry is experiencing unprecedented growth, with businesses allocating up to 60% of their marketing budgets to digital channels.',
-    attributes: { blockquote: true },
+      'We propose a multi-layered strategy to elevate your digital presence through ',
+  },
+  {
+    insert:
+      'cutting-edge content, strategic outreach, and performance-driven analytics.',
+    attributes: { italic: true },
+  },
+  { insert: '\n' },
+  {
+    insert: '🏆 Target: ',
+    attributes: { bold: true },
+  },
+  {
+    insert: 'Boost revenue by ',
+  },
+  {
+    insert: '35%',
+    attributes: { bold: true, background: '#fff8e1' },
+  },
+  {
+    insert:
+      ' within Q1, increase reach & engagement across all major channels.',
   },
   { insert: '\n\n' },
-  { insert: 'Investment Breakdown', attributes: { header: 3, bold: true } },
-  { insert: '\n\n' },
-  { insert: 'Content Creation: $25,000', attributes: { size: 'large' } },
+  {
+    insert: '🎯 Key Deliverables',
+    attributes: { header: 4, color: '#d35400' },
+  },
   { insert: '\n' },
-  { insert: 'Advertising Budget: $50,000' },
-  { insert: '\n' },
-  { insert: 'Analytics Tools: $15,000' },
-  { insert: '\n' },
-  { insert: 'Team Training: $10,000' },
+  {
+    insert: 'Increase engagement on social media',
+    attributes: { list: 'checked' },
+  },
+  {
+    insert: 'Launch multi-channel ad campaigns',
+    attributes: { list: 'unchecked' },
+  },
+  {
+    insert: 'Deploy blog and newsletter system',
+    attributes: { list: 'unchecked' },
+  },
+  {
+    insert: 'Set up analytics and tracking tools',
+    attributes: { list: 'checked' },
+  },
+  {
+    insert: 'Team enablement and platform training',
+    attributes: { list: 'unchecked' },
+  },
   { insert: '\n\n' },
-  { insert: 'Total Investment: $100,000', attributes: { bold: true, size: 'huge', color: '#27ae60' } },
+  {
+    insert: '📊 Market Analysis',
+    attributes: { header: 3, bold: true },
+  },
   { insert: '\n\n' },
-  { insert: 'For more information, contact us at: ' },
-  { insert: 'marketing@company.com', underline: true },
+  {
+    insert: '“Digital marketing now captures over ',
+  },
+  {
+    insert: '60%',
+    attributes: { bold: true, color: '#e67e22' },
+  },
+  {
+    insert: ' of total marketing budgets worldwide.”',
+    attributes: { italic: true },
+  },
+  { insert: '\n\n' },
+  {
+    insert: '--- Insight ---',
+    attributes: { bold: true, color: '#34495e' },
+  },
+  { insert: '\n' },
+  {
+    insert:
+      '• Video outperforms all other formats by 1200%.\n• Personalization backed by AI boosts conversion by 45%.\n',
+    attributes: { code: true },
+  },
+  { insert: '\n' },
+  {
+    insert: '💰 Investment Breakdown',
+    attributes: { header: 3, bold: true, color: '#2980b9' },
+  },
+  { insert: '\n' },
+  {
+    insert: '📽 Content Creation: ',
+    attributes: { bold: true },
+  },
+  {
+    insert: '$25,000\n',
+    attributes: { color: '#2ecc71' },
+  },
+  {
+    insert: '📢 Advertising Budget: ',
+    attributes: { bold: true },
+  },
+  {
+    insert: '$50,000\n',
+    attributes: { color: '#2ecc71' },
+  },
+  {
+    insert: '📊 Analytics Tools: ',
+    attributes: { bold: true },
+  },
+  {
+    insert: '$15,000\n',
+    attributes: { color: '#2ecc71' },
+  },
+  {
+    insert: '👩‍🏫 Team Training: ',
+    attributes: { bold: true },
+  },
+  {
+    insert: '$10,000\n',
+    attributes: { color: '#2ecc71' },
+  },
+  { insert: '\n' },
+  {
+    insert: '💵 Total: ',
+    attributes: { bold: true, size: 'large' },
+  },
+  {
+    insert: '$100,000',
+    attributes: { color: '#27ae60', size: 'huge', underline: true },
+  },
+  { insert: '\n\n' },
+  {
+    insert: '📧 Reach us at: ',
+  },
+  {
+    insert: 'marketing@company.com',
+    attributes: {
+      color: '#e74c3c',
+      underline: true,
+    },
+  },
+  { insert: '\n\n' },
+  {
+    insert: 'We’re excited to partner with you on this journey!',
+    attributes: { italic: true, bold: true },
+  },
   { insert: '\n' },
 ];
+
 const TECHNICAL_DATA = [
   { attributes: { underline: true, bold: true }, insert: 'API Documentation' },
   { insert: '\n' },
-  { attributes: { italic: true }, insert: 'Version 2.1.0 | Last Updated: June 2025' },
+  {
+    attributes: { italic: true },
+    insert: 'Version 2.1.0 | Last Updated: June 2025',
+  },
   { insert: '\n' },
-  { attributes: { underline: true, color: '#2c3e50', bold: true }, insert: 'Overview' },
+  {
+    attributes: { underline: true, color: '#2c3e50', bold: true },
+    insert: 'Overview',
+  },
   { insert: '\nThis API provides ' },
-  { attributes: { background: '#ecf0f1', bold: true }, insert: 'RESTful endpoints' },
+  {
+    attributes: { background: '#ecf0f1', bold: true },
+    insert: 'RESTful endpoints',
+  },
   { insert: ' for user management with ' },
   { attributes: { code: true }, insert: 'OAuth 2.0' },
   { insert: ' authentication.\nBase URL\nhttps://api.example.com/v2/' },
   { attributes: { 'code-block': 'plain' }, insert: '\n' },
   { attributes: { bold: true }, insert: 'Concept: ' },
-  { insert: 'All API requests must use HTTPS. The version number (v2) in the URL ensures backward compatibility.\n' },
+  {
+    insert:
+      'All API requests must use HTTPS. The version number (v2) in the URL ensures backward compatibility.\n',
+  },
   { attributes: { underline: true, bold: true }, insert: 'Authentication' },
   { insert: '\nAuthorization: Bearer YOUR_ACCESS_TOKEN' },
   { attributes: { 'code-block': 'plain' }, insert: '\n' },
@@ -1222,11 +1374,20 @@ const TECHNICAL_DATA = [
   { insert: '  "message": "User created"' },
   { attributes: { 'code-block': 'plain' }, insert: '\n' },
   { insert: '}' },
-  { attributes: { blockId: 'ee50b6da-6a36-4cce-9baa-5d2621843004', 'code-block': 'plain' }, insert: '\n' },
+  {
+    attributes: {
+      blockId: 'ee50b6da-6a36-4cce-9baa-5d2621843004',
+      'code-block': 'plain',
+    },
+    insert: '\n',
+  },
   { insert: '\n' },
   { attributes: { bold: true }, insert: 'Key Fields: ' },
   { attributes: { list: 'bullet' }, insert: '\n' },
-  { insert: '• success: Operation status\n• data: Created resource\n• message: Status details\n\nError Handling\nHTTP/1.1 400 Bad Request' },
+  {
+    insert:
+      '• success: Operation status\n• data: Created resource\n• message: Status details\n\nError Handling\nHTTP/1.1 400 Bad Request',
+  },
   { attributes: { 'code-block': 'plain' }, insert: '\n' },
   { insert: '{' },
   { attributes: { 'code-block': 'plain' }, insert: '\n' },
@@ -1235,10 +1396,19 @@ const TECHNICAL_DATA = [
   { insert: '  "details": "Email must contain @"' },
   { attributes: { 'code-block': 'plain' }, insert: '\n' },
   { insert: '}' },
-  { attributes: { blockId: 'a5df9edb-7919-4901-89fe-63b8aba9ed76', 'code-block': 'plain' }, insert: '\n' },
+  {
+    attributes: {
+      blockId: 'a5df9edb-7919-4901-89fe-63b8aba9ed76',
+      'code-block': 'plain',
+    },
+    insert: '\n',
+  },
   { insert: '\n' },
   { attributes: { bold: true }, insert: 'Best Practice: ' },
-  { insert: 'Check HTTP status first, then parse error object. Implement retries for 5xx errors.\n\n' },
+  {
+    insert:
+      'Check HTTP status first, then parse error object. Implement retries for 5xx errors.\n\n',
+  },
   { attributes: { color: '#e74c3c' }, insert: '⚠️ Rate Limiting' },
   { insert: '\n' },
   { attributes: { bold: true }, insert: '1000 requests/hour per API key' },
@@ -1251,80 +1421,179 @@ const TECHNICAL_DATA = [
   { insert: 'X-RateLimit-Reset: 3600\n' },
 ];
 const MARKETING_DATA = [
-  { insert: '🚀 WEEKLY MARKETING DIGEST', attributes: { header: 1, align: 'center', color: '#e74c3c' } },
-  { insert: '\n\n' },
-  { insert: 'June 15, 2025 | Issue #47', attributes: { align: 'center', italic: true } },
-  { insert: '\n\n' },
-  { insert: 'Hello Marketing Professionals!', attributes: { header: 2, color: '#2980b9' } },
-  { insert: "\n\nWelcome to another exciting edition of our weekly marketing digest. This week, we're diving deep into the latest trends that are " },
-  { insert: 'reshaping the digital marketing landscape', attributes: { bold: true, background: '#fff3cd' } },
-  { insert: ' and providing actionable insights you can implement today!\n\n' },
-  { insert: "🔥 This Week's Hot Topics", attributes: { header: 3, color: '#e67e22' } },
-  { insert: '\n' },
-  { insert: 'AI-Powered Personalization is driving 40% higher conversion rates' },
-  { insert: '\n', attributes: { list: 'bullet' } },
-  { insert: 'Voice Search Optimization becomes crucial for local businesses' },
-  { insert: '\n', attributes: { list: 'bullet' } },
-  { insert: 'Interactive Video Content sees 300% more engagement' },
-  { insert: '\n', attributes: { list: 'bullet' } },
-  { insert: 'Micro-Influencer partnerships outperform celebrity endorsements' },
-  { insert: '\n', attributes: { list: 'bullet' } },
-  { insert: '\n' },
-  { insert: '📊 Feature Spotlight: Advanced Analytics Dashboard', attributes: { header: 3, color: '#9b59b6' } },
-  { insert: '\n\nOur new analytics platform provides ' },
-  { insert: 'real-time insights', attributes: { italic: true, color: '#27ae60' } },
-  { insert: ' into your campaign performance. Track key metrics like:\n\n' },
-  { insert: 'Click-through rates (CTR) across all channels' },
-  { insert: '\n', attributes: { list: 'ordered' } },
-  { insert: 'Customer acquisition cost (CAC) breakdown' },
-  { insert: '\n', attributes: { list: 'ordered' } },
-  { insert: 'Lifetime value (LTV) predictions' },
-  { insert: '\n', attributes: { list: 'ordered' } },
-  { insert: 'Attribution modeling with multi-touch analysis' },
-  { insert: '\n', attributes: { list: 'ordered' } },
+  {
+    insert: '🚀 WEEKLY MARKETING DIGEST',
+    attributes: { header: 1, align: 'center', color: '#e74c3c' },
+  },
   { insert: '\n' },
   {
-    insert: 'The future of marketing is data-driven, and businesses that leverage advanced analytics are seeing up to 85% improvement in campaign ROI.',
-    attributes: { blockquote: true, italic: true },
+    insert: 'June 15, 2025 | Issue #47',
+    attributes: { align: 'center', italic: true },
   },
-  { insert: '\n\n' },
-  { insert: '💡 Quick Win Strategy', attributes: { header: 3, color: '#f39c12' } },
-  { insert: '\n\n' },
-  { insert: 'IMPLEMENT URGENCY MARKETING', attributes: { bold: true, size: 'large' } },
-  { insert: '\n\nCreate a sense of urgency in your campaigns using:\n\n' },
+  { insert: '\n' },
+  {
+    insert: '👋 Hello Marketing Professionals!',
+    attributes: { header: 2, color: '#2980b9' },
+  },
   {
     insert:
-      'Limited-time offers with countdown timers\nScarcity messaging (\"Only 5 left in stock\")\nEarly bird discounts for loyal customers\nFlash sales with exclusive access',
-    attributes: { 'code-block': true },
+      '\nWelcome to this week’s edition! We’re covering the hottest topics reshaping digital marketing—and how you can stay ahead.\n',
+  },
+  {
+    insert: '🌟 Trends To Watch',
+    attributes: { header: 3, color: '#e67e22' },
   },
   { insert: '\n' },
-  { insert: 'Results: Companies using urgency tactics see an average ' },
-  { insert: '22% increase in conversion rates', attributes: { bold: true, background: '#d5f4e6' } },
-  { insert: '!\n\n' },
-  { insert: '🎯 Case Study: E-commerce Success Story', attributes: { header: 3, color: '#e74c3c' } },
-  { insert: '\n\nA mid-sized fashion retailer implemented our recommended strategy:\n\n' },
-  { insert: 'Challenge: ', attributes: { bold: true } },
-  { insert: 'Low email open rates (12%) and declining social media engagement\n' },
-  { insert: 'Solution: ', attributes: { bold: true } },
-  { insert: 'Personalized email campaigns + interactive social content\n' },
-  { insert: 'Results: ', attributes: { bold: true } },
-  { insert: '45% increase in email opens, 78% boost in social engagement\n\n' },
-  { insert: '📅 Upcoming Events', attributes: { header: 3, color: '#34495e' } },
+  {
+    insert: 'AI-Powered Personalization boosts conversion by 40%',
+    attributes: { list: 'checked' },
+  },
+  {
+    insert: 'Voice Search is critical for local businesses',
+    attributes: { list: 'checked' },
+  },
+  {
+    insert: 'Interactive Videos get 300% more engagement',
+    attributes: { list: 'unchecked' },
+  },
+  {
+    insert: 'Micro-Influencers > Celebrity Endorsements',
+    attributes: { list: 'checked' },
+  },
   { insert: '\n' },
-  { insert: 'June 22: Webinar - "Mastering TikTok for Business"' },
-  { insert: '\n', attributes: { list: 'bullet' } },
-  { insert: 'June 28: Workshop - "Email Marketing Automation"' },
-  { insert: '\n', attributes: { list: 'bullet' } },
-  { insert: 'July 5: Conference - "Future of Digital Marketing"' },
-  { insert: '\n', attributes: { list: 'bullet' } },
+  {
+    insert: '📊 Spotlight: Analytics Dashboard',
+    attributes: { header: 3, color: '#9b59b6' },
+  },
+  {
+    insert: '\nMonitor your campaigns in ',
+  },
+  {
+    insert: 'real time',
+    attributes: { italic: true, color: '#27ae60' },
+  },
+  {
+    insert: ' with advanced KPIs:\n',
+  },
+  {
+    insert: 'Click-through rates (CTR)',
+    attributes: { list: 'ordered' },
+  },
+  {
+    insert: 'Customer acquisition cost (CAC)',
+    attributes: { list: 'ordered' },
+  },
+  {
+    insert: 'Lifetime value (LTV)',
+    attributes: { list: 'ordered' },
+  },
+  {
+    insert: 'Attribution model tracking',
+    attributes: { list: 'ordered' },
+  },
+  {
+    insert:
+      '\n\n“The future of marketing is data-driven. Brands using analytics improve ROI by 85%.”',
+    attributes: { blockquote: true, italic: true },
+  },
   { insert: '\n' },
-  { insert: 'Register now and get ' },
-  { insert: '20% early bird discount', attributes: { bold: true, color: '#e74c3c', size: 'large' } },
-  { insert: '!\n\n' },
-  { insert: 'Ready to supercharge your marketing? ' },
-  { insert: 'Contact our team : team@marketing.com' },
-  { insert: ' for a free consultation!\n\n' },
-  { insert: 'Best regards,\nThe Marketing Team 📈', attributes: { align: 'center', italic: true } },
+  {
+    insert: '💡 Quick Win Strategy',
+    attributes: { header: 3, color: '#f39c12' },
+  },
+  { insert: '\n' },
+  {
+    insert: '🔥 IMPLEMENT URGENCY MARKETING',
+    attributes: { bold: true, size: 'large' },
+  },
+  {
+    insert: '\nCreate urgency with these methods:\n',
+  },
+  {
+    insert:
+      '• Countdown timers\n• "Only X left!" scarcity alerts\n• Early bird discounts\n• Flash sales access\n',
+    attributes: { 'code-block': true },
+  },
+  {
+    insert: '➡️ Result: ',
+    attributes: { bold: true },
+  },
+  {
+    insert: '22% increase in conversions',
+    attributes: { bold: true, background: '#d5f4e6' },
+  },
+  { insert: '!\n' },
+  {
+    insert: '📈 Case Study: Fashion Brand Growth',
+    attributes: { header: 3, color: '#e74c3c' },
+  },
+  {
+    insert: '\nA mid-size retailer applied our strategy:\n',
+  },
+  {
+    insert: 'Challenge: ',
+    attributes: { bold: true },
+  },
+  {
+    insert: '12% email open rate + declining social reach\n',
+  },
+  {
+    insert: 'Solution: ',
+    attributes: { bold: true },
+  },
+  {
+    insert: 'Personalized emails & interactive posts\n',
+  },
+  {
+    insert: 'Results: ',
+    attributes: { bold: true },
+  },
+  {
+    insert: '45% more opens, 78% rise in engagement\n',
+  },
+  {
+    insert: '📅 Upcoming Events',
+    attributes: { header: 3, color: '#34495e' },
+  },
+  {
+    insert: '\n',
+  },
+  {
+    insert: 'June 22: Webinar – "Mastering TikTok for Business"',
+    attributes: { list: 'unchecked' },
+  },
+  {
+    insert: 'June 28: Workshop – "Email Automation Deep Dive"',
+    attributes: { list: 'unchecked' },
+  },
+  {
+    insert: 'July 5: Conference – "Future of Digital Marketing"',
+    attributes: { list: 'unchecked' },
+  },
+  { insert: '\n' },
+  {
+    insert: '🎟 Register now to grab your ',
+  },
+  {
+    insert: '20% Early Bird Discount!',
+    attributes: { bold: true, color: '#e74c3c', size: 'large' },
+  },
+  { insert: '\n' },
+  {
+    insert: 'Need help with strategy or automation? ',
+  },
+  {
+    insert: 'Contact us: team@marketing.com',
+    attributes: { color: '#2980b9', underline: true },
+  },
+  {
+    insert: ' for a free consultation!',
+  },
+  { insert: '\n\n' },
+  {
+    insert: '– The Marketing Team 📈',
+    attributes: { align: 'center', italic: true },
+  },
   { insert: '\n' },
 ];
 
